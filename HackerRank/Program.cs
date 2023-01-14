@@ -4,18 +4,122 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int[,] arr ={{11, 2, 4},
-                     {4 , 5, 6},
-                     {10, 8, -12}};
+        //List<List<int>> matrix = new List<List<int>> {
+        // new List<int>() { 6, 2, 3 },
+        // new List<int>() { 1, 8, 2 },
+        // new List<int>() { 3, 4, 7 }
+        //};
+        //
+        //Console.WriteLine(DiagonalDifferenceWithLists(matrix));
 
-        Console.WriteLine(DiagonalDifference(arr));
+        Test(new List<int>() { -4 ,3 ,- 9, 0, 4, 1 });
+
+        ConsoleStair(5);
+
+        var ex = new List<int>() { 1, 2, 3, 4, 5 };
+        miniMaxSum(ex);
     }
 
+    public static void miniMaxSum(List<int> arr)
+    {
+        int sum = 0;
+        int max = arr.Max();
+        int min = arr.Min();
+        for (int i = 0; i < arr.Count; i++)
+        {
+            sum += arr[i];
+        }
+        Console.Write("{0} {1}", sum - max, sum - min);
+    }
+    public static void ConsoleStair(int n)
+    {
+        for (int y = n - 1; y >= 0 ; y--)
+        {
+            for (int x = 0; x < n; x++)
+            {
+                if (x >= y)
+                    Console.Write('#');
+                else
+                    Console.Write(" ");
+            }
+            Console.WriteLine();
+        }
+    } 
+    public static void Test(List<int> arr)
+    {
+        int len = arr.Count;
+
+        // Initialize the positiveCount, negativeCount, and
+        // zeroCountby 0 which will count the total number
+        // of positive, negative and zero elements
+        float positiveCount = 0;
+        float negativeCount = 0;
+        float zeroCount = 0;
+
+        // Traverse the array and count the total number of
+        // positive, negative, and zero elements.
+        for (int i = 0; i < len; i++)
+        {
+            if (arr[i] > 0)
+            {
+                positiveCount++;
+            }
+            else if (arr[i] < 0)
+            {
+                negativeCount++;
+            }
+            else if (arr[i] == 0)
+            {
+                zeroCount++;
+            }
+        }
+
+        // Print the ratio of positive,
+        // negative, and zero elements
+        // in the array up to four decimal places.
+        Console.WriteLine("{0:F6} ", positiveCount / len);
+        Console.WriteLine("{0:F6} ", negativeCount / len);
+        Console.WriteLine("{0:F6} ", zeroCount / len);
+    }
+    public static void plusMinus(List<int> arr)
+    {
+        decimal minus = 0;
+        decimal plus = 0;
+        decimal zero = 0;
+
+        foreach (var item in arr)
+        {
+            if(item < 0)
+                minus++;
+            else if(item > 0)
+                plus++; 
+            else if(item == 0)
+                zero++; 
+        }
+
+        var minusRatio = minus / arr.Count;
+        var plusRatio = plus / arr.Count;
+        var zeroRatio = zero / arr.Count;
+
+        Console.WriteLine("{0:F6} ", minusRatio);
+        Console.WriteLine("{0:F6} ", plusRatio);
+        Console.WriteLine("{0:F6} ", zeroRatio);
+
+    }
+    public static int DiagonalDifferenceWithLists(List<List<int>> arr)
+    {
+        int result = 0;
+        for (int i = 0; i < arr.Count; i++)
+        {
+            result += arr[i][i] - arr[i][arr.Count - 1 - i];
+        }
+
+        return Math.Abs(result);
+    }   
     public static int DiagonalDifference(int[,] arr)
     {
         var d1 = 0;
         var d2 = 0;
-
         for (int i = 0; i < arr.GetLength(0); i++)
         {
             d1 += arr[i, i];
