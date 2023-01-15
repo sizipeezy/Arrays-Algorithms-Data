@@ -24,7 +24,22 @@ internal class Program
 
         Console.WriteLine(Reverse("GeeksForGeeks"));
 
+
+        Console.WriteLine(FactorielSimply(5));
         ReverseNumber(152);
+    }
+    public static int FactorielSimply(int number)
+    {
+        if (number == 0)
+        {
+            return 0;
+        }
+        if (number == 1)
+        {
+            return 1;
+        }
+
+        return number * FactorielSimply(number - 1);
     }
     public static  void ReverseNumber(int n)
     {
