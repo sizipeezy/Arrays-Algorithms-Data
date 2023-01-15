@@ -12,12 +12,21 @@ internal class Program
         //
         //Console.WriteLine(DiagonalDifferenceWithLists(matrix));
 
-        Test(new List<int>() { -4 ,3 ,- 9, 0, 4, 1 });
+        Console.WriteLine(Reverse("GeeksForGeeks"));
+    }
 
-        ConsoleStair(5);
+    public static string Reverse(string Input)
+    {
+        char[] charArray = Input.ToCharArray();
 
-        var ex = new List<int>() { 1, 2, 3, 4, 5 };
-        miniMaxSum(ex);
+        string reversedString = String.Empty;
+
+        for (int i = charArray.Length - 1; i > -1; i--)
+        {
+            reversedString += charArray[i];
+        }
+
+        return reversedString;
     }
 
     public static void miniMaxSum(List<int> arr)
@@ -104,6 +113,16 @@ internal class Program
         Console.WriteLine("{0:F6} ", minusRatio);
         Console.WriteLine("{0:F6} ", plusRatio);
         Console.WriteLine("{0:F6} ", zeroRatio);
+
+    }
+
+    public static void ReverseAString(char[] arr)
+    {
+        for (int i = 0, j = arr.Length - 1; i < j; i++, j--)
+        {
+            arr[i] = arr[j];
+            arr[j] = arr[i];
+        }
 
     }
     public static int DiagonalDifferenceWithLists(List<List<int>> arr)
