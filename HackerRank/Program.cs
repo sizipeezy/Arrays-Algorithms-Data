@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.Design.Serialization;
+﻿using HackerRank;
+using System.ComponentModel.Design.Serialization;
 
 internal class Program
 {
@@ -11,6 +12,15 @@ internal class Program
         //};
         //
         //Console.WriteLine(DiagonalDifferenceWithLists(matrix));
+
+
+        var arr = new int[] { 2, 4, 5, 3 };
+        Sort.SortFunction(arr);
+        foreach (var item in arr)
+        {
+            Console.WriteLine(item);
+        }
+
 
         Console.WriteLine(Reverse("GeeksForGeeks"));
     }
