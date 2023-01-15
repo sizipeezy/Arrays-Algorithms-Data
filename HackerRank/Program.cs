@@ -14,8 +14,8 @@ internal class Program
         //Console.WriteLine(DiagonalDifferenceWithLists(matrix));
 
 
-        var arr = new int[] { 2, 4, 5, 3 };
-        Sort.SortFunction(arr);
+        var arr = new int[] { 30, 10, -90, -40, 50, 25 };
+        Sort.BubbleSort(arr);
         foreach (var item in arr)
         {
             Console.WriteLine(item);
