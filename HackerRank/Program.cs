@@ -23,8 +23,22 @@ internal class Program
 
 
         Console.WriteLine(Reverse("GeeksForGeeks"));
-    }
 
+        ReverseNumber(152);
+    }
+    public static  void ReverseNumber(int n)
+    {
+        int reverseNumber = 0;
+
+        while (n != 0)
+        {
+            reverseNumber *= 10;
+            reverseNumber += n % 10;
+            n = n / 10;
+        }
+
+        Console.WriteLine(reverseNumber);
+    }
     public static string Reverse(string Input)
     {
         char[] charArray = Input.ToCharArray();
