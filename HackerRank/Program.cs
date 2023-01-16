@@ -5,32 +5,33 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //List<List<int>> matrix = new List<List<int>> {
-        // new List<int>() { 6, 2, 3 },
-        // new List<int>() { 1, 8, 2 },
-        // new List<int>() { 3, 4, 7 }
-        //};
-        //
-        //Console.WriteLine(DiagonalDifferenceWithLists(matrix));
-
-        var inputList = new List<int>() { 3, 2, 1, 3 };
-
-        Console.WriteLine(Candles.birthdayCakeWithoutDictionary(inputList));
-
-        var arr = new int[] { 30, 10, -90, -40, 50, 25 };
-        Sort.BubbleSort(arr);
-        foreach (var item in arr)
-        {
-            Console.WriteLine(item);
-        }
-
-
-        Console.WriteLine(Reverse("GeeksForGeeks"));
-
-
-        Console.WriteLine(FactorielSimply(5));
-        ReverseNumber(152);
+        var chocolateBars = new List<int>(){ 2, 2, 1, 3, 2 };
+        Console.WriteLine(Solve(chocolateBars, 4, 2));
     }
+    public static int Solve(List<int> choclateBarValues, int birthday, int birthMonth)
+    {
+        var totalWays = 0;
+
+        if (choclateBarValues.Count >= birthMonth)
+        {
+            var barPartSum = 0;
+            for (int i = 0; i < birthMonth; i++)
+                barPartSum += choclateBarValues[i];
+
+            if (barPartSum == birthday)
+                totalWays++;
+
+            for (int i = 0; i < choclateBarValues.Count - birthMonth; i++)
+            {
+                barPartSum -= choclateBarValues[i] + choclateBarValues[i + birthMonth];
+
+                if (barPartSum == birthday)
+                    totalWays++;
+            }
+        }
+        return totalWays;
+    }
+
     public static int FactorielSimply(int number)
     {
         if (number == 0)
