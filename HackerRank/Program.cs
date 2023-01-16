@@ -13,6 +13,9 @@ internal class Program
         //
         //Console.WriteLine(DiagonalDifferenceWithLists(matrix));
 
+        var inputList = new List<int>() { 3, 2, 1, 3 };
+
+        Console.WriteLine(Candles.birthdayCakeWithoutDictionary(inputList));
 
         var arr = new int[] { 30, 10, -90, -40, 50, 25 };
         Sort.BubbleSort(arr);
