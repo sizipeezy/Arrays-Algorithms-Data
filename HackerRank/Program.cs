@@ -7,7 +7,44 @@ internal class Program
     {
         var chocolateBars = new List<int>(){ 2, 2, 1, 3, 2 };
         Console.WriteLine(Solve(chocolateBars, 4, 2));
+
+        var heights = new List<int>() { 1, 6, 3, 5, 2 };
+        Console.WriteLine(hurdleRace(4, heights));
+
+        Console.WriteLine(findDigits(12));
     }
+
+    public static int findDigits(int n)
+    {
+        int counter = 0;
+        int cp = n;
+        while (n != 0)
+        {
+            int rm = n % 10;
+            if (rm > 0 && cp % rm == 0)
+                counter++;
+
+            n /= 10;
+        }
+
+        return counter;
+    }
+    public static int hurdleRace(int k, List<int> height)
+    {
+
+        var tallest = height[0];
+
+        for (int i = 0; i < height.Count; i++)
+        {
+            if (height[i] > tallest)
+            {
+                tallest = height[i];
+            }
+        }
+
+        return Math.Max(0, tallest - k);
+    }
+
     public static int Solve(List<int> choclateBarValues, int birthday, int birthMonth)
     {
         var totalWays = 0;
