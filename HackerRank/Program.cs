@@ -5,13 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var chocolateBars = new List<int>(){ 2, 2, 1, 3, 2 };
-        Console.WriteLine(Solve(chocolateBars, 4, 2));
-
-        var heights = new List<int>() { 1, 6, 3, 5, 2 };
-        Console.WriteLine(hurdleRace(4, heights));
-
-        Console.WriteLine(findDigits(12));
+        Console.WriteLine(Factoriel.extraLongFactorials(25));
     }
 
     public static int findDigits(int n)
