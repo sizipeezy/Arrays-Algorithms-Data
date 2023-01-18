@@ -6,8 +6,12 @@ internal class Program
     private static void Main(string[] args)
     {
 
-        var arr = new int[] { 3, 17, 75, 80, 202 };
-        BinarySearch.Binary(arr, 17);
+        var arr = new int[] { 3,1,5, 10, 7 };
+        Sort.SelectionSort(arr);
+        foreach (var item in arr)
+        {
+            Console.WriteLine(item);
+        }
     }
 
     public static int findDigits(int n)

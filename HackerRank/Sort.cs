@@ -1,7 +1,30 @@
-﻿namespace HackerRank
+﻿using System;
+
+namespace HackerRank
 {
     public static class Sort
     {
+        public static int[]  SelectionSort(int[] array)
+        {
+            for (var i = 0; i < array.Length - 1; i++)
+            {
+                var lowestNumberIndex = i;
+                for (var j = i + 1; j < array.Length; j++)
+                {
+                    if (array[j] < array[lowestNumberIndex])
+                    {
+                        lowestNumberIndex = j;
+                    }
+                }
+                if (lowestNumberIndex != i)
+                {
+                    var temp = array[i];
+                    array[i] = array[lowestNumberIndex];
+                    array[lowestNumberIndex] = temp;
+                }
+            }
+            return array;
+        }
         public static void SortFunction(int[] arr)
         {
             int temp;
