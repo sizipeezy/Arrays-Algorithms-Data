@@ -5,7 +5,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine(Factoriel.extraLongFactorials(25));
+
+        var arr = new int[] { 3, 17, 75, 80, 202 };
+        BinarySearch.Binary(arr, 17);
     }
 
     public static int findDigits(int n)
