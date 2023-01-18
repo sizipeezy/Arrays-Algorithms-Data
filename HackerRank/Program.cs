@@ -7,7 +7,10 @@ internal class Program
     {
 
         var arr = new int[] { 3,1,5, 10, 7 };
-        Sort.SelectionSort(arr);
+        Sort.InsertionSort(arr);
+
+
+        //Sort.SelectionSort(arr);
         foreach (var item in arr)
         {
             Console.WriteLine(item);
