@@ -6,17 +6,61 @@ internal class Program
     private static void Main(string[] args)
     {
 
-        var arr = new int[] { 3,1,5, 10, 7 };
-        Sort.InsertionSort(arr);
+        // var arr = new int[] { 3,1,5, 10, 7 };
+        // Sort.InsertionSort(arr);
 
 
         //Sort.SelectionSort(arr);
-        foreach (var item in arr)
+        //foreach (var item in arr)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+        var words = new string[] { "a", "b", "c", "d" };
+
+        WordBuilder(words);
+
+
+        string input = "racecar";
+        Console.WriteLine(IsPalindrome(input));
+    }
+    public static bool IsPalindrome(string input)
+    {
+        int leftIndex = 0;
+        int rightIndex = input.Length - 1;
+        int mid = input.Length / 2;
+
+        while (leftIndex < mid)
+        {
+            if (input[leftIndex] != input[rightIndex])
+                return false;
+
+            leftIndex++;
+
+            rightIndex--;
+        }
+
+        return true;
+    }
+    public static void WordBuilder(string[] arr)
+    {
+        var resultCollection = new List<string>();
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            for (int j = 0; j < arr.Length; j++)
+            {
+                if (i != j)
+                    resultCollection.Add(arr[i] + arr[j]);
+            }
+        }
+
+        foreach (var item in resultCollection)
         {
             Console.WriteLine(item);
         }
-    }
 
+    }
     public static int findDigits(int n)
     {
         int counter = 0;
