@@ -16,13 +16,57 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-        var words = new string[] { "a", "b", "c", "d" };
+        var arr = new List<int>() { 3, 2, 1, 5, 4 };
+        Console.WriteLine(DistanceBetweenIndex(arr));
 
-        WordBuilder(words);
+        Console.WriteLine(GamesCount(20, 3, 6, 70));
+    }
 
 
-        string input = "racecar";
-        Console.WriteLine(IsPalindrome(input));
+    public static int GamesCount(int p, int d, int m, int s)
+    {
+        int gameCount = 0;
+
+        while (s >= 0)
+        {
+
+            s -= p;
+            p -= d;
+
+            if (p < m)
+            {
+                p = m;
+            }
+
+            gameCount++;
+        }
+
+        return gameCount - 1;
+    }
+    public static int DistanceBetweenIndex(List<int> arr)
+    {
+        var min = arr.Count;
+
+        for (int i = 0; i < arr.Count; i++)
+        {
+            for (int j = i + 1; j < arr.Count; j++)
+            {
+                if (arr[i] == arr[j])
+                {
+                    if (j - i < min)
+                    {
+                        min = j - i;
+                    }
+
+                }
+            }
+        }
+
+        if (min == arr.Count)
+        {
+            return -1;
+        }
+        return min;
     }
     public static bool IsPalindrome(string input)
     {
@@ -129,7 +173,7 @@ internal class Program
 
         return number * FactorielSimply(number - 1);
     }
-    public static  void ReverseNumber(int n)
+    public static void ReverseNumber(int n)
     {
         int reverseNumber = 0;
 
@@ -169,7 +213,7 @@ internal class Program
     }
     public static void ConsoleStair(int n)
     {
-        for (int y = n - 1; y >= 0 ; y--)
+        for (int y = n - 1; y >= 0; y--)
         {
             for (int x = 0; x < n; x++)
             {
@@ -180,7 +224,7 @@ internal class Program
             }
             Console.WriteLine();
         }
-    } 
+    }
     public static void Test(List<int> arr)
     {
         int len = arr.Count;
@@ -225,12 +269,12 @@ internal class Program
 
         foreach (var item in arr)
         {
-            if(item < 0)
+            if (item < 0)
                 minus++;
-            else if(item > 0)
-                plus++; 
-            else if(item == 0)
-                zero++; 
+            else if (item > 0)
+                plus++;
+            else if (item == 0)
+                zero++;
         }
 
         var minusRatio = minus / arr.Count;
@@ -261,7 +305,7 @@ internal class Program
         }
 
         return Math.Abs(result);
-    }   
+    }
     public static int DiagonalDifference(int[,] arr)
     {
         var d1 = 0;
