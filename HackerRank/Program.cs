@@ -16,8 +16,37 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-        var arr = new int[] { 1, 3, 2, 6, 1, 2 };
-        Console.WriteLine(divisibleSumPairs(arr.Length, 3, arr));
+        var arr = new int[] { 1, 4, 4, 4, 5, 3 };
+        Console.WriteLine(BirdsCount(6, arr));
+    }
+
+    public static int BirdsCount(int n, int[] arr)
+    {
+        var dict = new Dictionary<int, int>();
+        for (int i = 0; i < n; i++)
+        {
+            if (!dict.ContainsKey(arr[i]))
+            {
+                dict.Add(arr[i], 1);
+            }
+            else
+            {
+                dict[arr[i]]++;
+            }
+       
+        }
+
+        var smallest = 0;
+
+        foreach (var item in dict)
+        {
+            if(item.Value > smallest)
+            {
+                smallest = item.Key;
+            }
+        }
+
+        return smallest;
     }
     public static int divisibleSumPairs(int n, int k, int[] arr)
     {
