@@ -16,8 +16,51 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-        var arr = new int[] { 1, 2, 3, 4, 5 };
-        Console.WriteLine(SortedSearch(arr, 6));
+        var arr = new int[] { 1, 3, 2, 6, 1, 2 };
+        Console.WriteLine(divisibleSumPairs(arr.Length, 3, arr));
+    }
+    public static int divisibleSumPairs(int n, int k, int[] arr)
+    {
+        int counter = 0;
+        for (int i = 0; i < n; i++)
+        {
+            for (int j = i + 1; j < n; j++)
+            {
+                if ((arr[i] + arr[j]) % k == 0)
+                {
+                    counter++;
+                }
+            }
+        }
+
+        return counter;
+    }
+    public static int BinarySearch(int[] arr, int element)
+    {
+        var lowerIndex = 0;
+        var highIndex = arr.Length - 1;
+        
+
+        while (lowerIndex <= highIndex)
+        {
+            var mid = (lowerIndex + highIndex ) / 2;
+
+            var valueMid = arr[mid];
+
+            if (element == valueMid)
+                return mid;
+            else if(element < valueMid)
+            {
+                highIndex = mid--;
+            }
+            else if(element > valueMid)
+            {
+                lowerIndex = mid++;
+            }
+            
+        }
+
+        return element;
     }
 
     public static int SortedSearch(int[] arr, int element)
