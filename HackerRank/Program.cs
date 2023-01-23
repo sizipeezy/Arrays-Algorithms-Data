@@ -16,13 +16,22 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-        var arr = new List<int>() { 3, 2, 1, 5, 4 };
-        Console.WriteLine(DistanceBetweenIndex(arr));
-
-        Console.WriteLine(GamesCount(20, 3, 6, 70));
+        var arr = new int[] { 1, 2, 3, 4, 5 };
+        Console.WriteLine(SortedSearch(arr, 6));
     }
 
+    public static int SortedSearch(int[] arr, int element)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            if (arr[i] == element)
+                return arr[i];
+            else if (arr[i] > element)
+                return -1;
+        }
 
+        return -1;
+    }
     public static int GamesCount(int p, int d, int m, int s)
     {
         int gameCount = 0;
