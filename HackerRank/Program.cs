@@ -18,6 +18,25 @@ internal class Program
 
         var arr = new int[] { 1, 4, 4, 4, 5, 3 };
         Console.WriteLine(BirdsCount(6, arr));
+
+        var test = new List<int>() { 0, -1, 2, 1 };
+        Console.Write(AngryProfessor(2, test));
+    }
+
+    public static string AngryProfessor(int k, List<int> a)
+    {
+        var result = new List<int>();
+
+        foreach (var item in a)
+        {
+            if (item <= 0)
+                result.Add(item);
+        }
+
+        if (result.Count >= k)
+            return "NO";
+        else
+            return "YES";
     }
 
     public static int BirdsCount(int n, int[] arr)
@@ -33,14 +52,14 @@ internal class Program
             {
                 dict[arr[i]]++;
             }
-       
+
         }
 
         var smallest = 0;
 
         foreach (var item in dict)
         {
-            if(item.Value > smallest)
+            if (item.Value > smallest)
             {
                 smallest = item.Key;
             }
@@ -68,25 +87,25 @@ internal class Program
     {
         var lowerIndex = 0;
         var highIndex = arr.Length - 1;
-        
+
 
         while (lowerIndex <= highIndex)
         {
-            var mid = (lowerIndex + highIndex ) / 2;
+            var mid = (lowerIndex + highIndex) / 2;
 
             var valueMid = arr[mid];
 
             if (element == valueMid)
                 return mid;
-            else if(element < valueMid)
+            else if (element < valueMid)
             {
                 highIndex = mid--;
             }
-            else if(element > valueMid)
+            else if (element > valueMid)
             {
                 lowerIndex = mid++;
             }
-            
+
         }
 
         return element;
