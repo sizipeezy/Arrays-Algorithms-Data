@@ -16,11 +16,39 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-        var arr = new int[] { 1, 4, 4, 4, 5, 3 };
-        Console.WriteLine(BirdsCount(6, arr));
+        //var arr = new int[] { 1, 4, 4, 4, 5, 3 };
+        //Console.WriteLine(BirdsCount(6, arr));
+        //
+        //var test = new List<int>() { 0, -1, 2, 1 };
+        //Console.Write(AngryProfessor(2, test));
 
-        var test = new List<int>() { 0, -1, 2, 1 };
-        Console.Write(AngryProfessor(2, test));
+        Console.WriteLine(BeautifulDays(20, 23, 6));
+    }
+    public static int BeautifulDays(int i, int j, int k)
+    {
+        int counter = 0;
+        for (int p = i; p <= j; p++)
+        {
+            int result = GetDiff(p);
+            if (result % k == 0)
+                counter++;
+        }
+
+        return counter;
+    }
+
+    public static int GetDiff(int value)
+    {
+        int temp = value;
+        int reverse = 0;
+
+        while (temp > 0)
+        {
+            reverse = reverse * 10;
+            reverse += temp % 10;
+            temp = temp / 10;
+        }
+        return Math.Abs(value - reverse);
     }
 
     public static string AngryProfessor(int k, List<int> a)
