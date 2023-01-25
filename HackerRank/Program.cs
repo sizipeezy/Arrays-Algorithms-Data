@@ -5,17 +5,20 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var numbers = new int[] { 1, 2, 3 };
+        var numbers = new int[] { 1, 2, 3, 2, 1, 2, 1 };
 
         Console.Write(string.Join(" ", ArrayHelper.Reverse(numbers)));
 
         Console.Write(string.Join(" ", ArrayHelper.ValuesGenerator(3, 'a')));
 
 
-        var stringInput = Console.ReadLine().Split(" ").ToArray();
+       //var stringInput = Console.ReadLine().Split(" ").ToArray();
+       //
+       //Console.Write(string.Join(" ", ArrayHelper.CompactClearer(stringInput)));
 
-        Console.Write(string.Join(" ", ArrayHelper.CompactClearer(stringInput)));
 
+        var numsWithout = new int[] { 1, 2 };
+        Console.WriteLine(string.Join(" ", ArrayHelper.Without(numbers, numsWithout)));
 
 
         // var arr = new int[] { 3,1,5, 10, 7 };

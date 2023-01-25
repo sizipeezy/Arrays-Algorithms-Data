@@ -49,5 +49,18 @@
 
             return result;
         }
+
+        public static List<int> Without(int[] arr, int[] values)
+        {
+            var result = new List<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (!values.Contains(arr[i]))
+                    result.Add(arr[i]);
+            }
+
+            return result;
+        }
     }
 }
