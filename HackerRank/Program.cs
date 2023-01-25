@@ -5,6 +5,18 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        var numbers = new int[] { 1, 2, 3 };
+
+        Console.Write(string.Join(" ", ArrayHelper.Reverse(numbers)));
+
+        Console.Write(string.Join(" ", ArrayHelper.ValuesGenerator(3, 'a')));
+
+
+        var stringInput = Console.ReadLine().Split(" ").ToArray();
+
+        Console.Write(string.Join(" ", ArrayHelper.CompactClearer(stringInput)));
+
+
 
         // var arr = new int[] { 3,1,5, 10, 7 };
         // Sort.InsertionSort(arr);
@@ -22,7 +34,12 @@ internal class Program
         //var test = new List<int>() { 0, -1, 2, 1 };
         //Console.Write(AngryProfessor(2, test));
 
-        Console.WriteLine(BeautifulDays(20, 23, 6));
+        //var arr = new int[] { 4, 2, 7, 1, 3 };
+        //Sort.BubbleSort(arr);
+        //foreach (var item in arr)
+        //{
+        //    Console.WriteLine(item);
+        //}
     }
     public static int BeautifulDays(int i, int j, int k)
     {

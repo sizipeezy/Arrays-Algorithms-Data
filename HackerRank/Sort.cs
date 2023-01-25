@@ -20,7 +20,7 @@ namespace HackerRank
                 arr[j + 1] = key;
             }
         }
-        public static int[]  SelectionSort(int[] array)
+        public static int[] SelectionSort(int[] array)
         {
             for (var i = 0; i < array.Length - 1; i++)
             {
@@ -55,25 +55,25 @@ namespace HackerRank
                         arr[j] = temp;
                     }
                 }
-                    
+
             }
         }
 
-        public static void BubbleSort(int[] arr)
-        {
-            int temp;
-            for (int i = 0; i < arr.Length; i++)
-            {
-                for (int j = i + 1; j < arr.Length; j++)
-                {
-                    if (arr[i] > arr[j])
-                    {
-                        temp = arr[j];
-                        arr[j] = arr[i];
-                        arr[i] = temp;
-                    }
-                }
-            }
-        }
+       public static void BubbleSort(int[] arr)
+       {
+           int temp;
+           for (int i = 0; i < arr.Length; i++)
+           {
+               for (int j = i + 1; j < arr.Length; j++)
+               {
+                   if (arr[i] > arr[j])
+                   {
+                       temp = arr[j];
+                       arr[j] = arr[i];
+                       arr[i] = temp;
+                   }
+               }
+           }
+       }
     }
 }
