@@ -5,7 +5,22 @@
 
 
     public class ArrayHelper
-    { 
+    {
+        public static List<int> Unique(int[] arr)
+        {
+            var result = new List<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (result.Contains(arr[i]))
+                    break;
+                else
+                    result.Add(arr[i]);
+
+            }
+
+            return result;
+        }
 
         public static List<int> Reverse(int[] arr)
         {
@@ -36,7 +51,7 @@
             var result = new List<int>();
             foreach (var item in arr)
             {
-                if(item.OfType<int>() != null)
+                if (item.OfType<int>() != null)
                 {
                     var res = int.TryParse(item, out var success);
 

@@ -5,20 +5,24 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var numbers = new int[] { 1, 2, 3, 2, 1, 2, 1 };
+        var numbers = new int[] { 1, 2, 3, 1, 2 };
 
-        Console.Write(string.Join(" ", ArrayHelper.Reverse(numbers)));
-
-        Console.Write(string.Join(" ", ArrayHelper.ValuesGenerator(3, 'a')));
+        Console.WriteLine(string.Join(" ", ArrayHelper.Unique(numbers)));
 
 
-       //var stringInput = Console.ReadLine().Split(" ").ToArray();
-       //
-       //Console.Write(string.Join(" ", ArrayHelper.CompactClearer(stringInput)));
+        //
+        //Console.Write(string.Join(" ", ArrayHelper.Reverse(numbers)));
+        //
+        //Console.Write(string.Join(" ", ArrayHelper.ValuesGenerator(3, 'a')));
 
 
-        var numsWithout = new int[] { 1, 2 };
-        Console.WriteLine(string.Join(" ", ArrayHelper.Without(numbers, numsWithout)));
+        //var stringInput = Console.ReadLine().Split(" ").ToArray();
+        //
+        //Console.Write(string.Join(" ", ArrayHelper.CompactClearer(stringInput)));
+
+
+        //var numsWithout = new int[] { 1, 2 };
+        //Console.WriteLine(string.Join(" ", ArrayHelper.Without(numbers, numsWithout)));
 
 
         // var arr = new int[] { 3,1,5, 10, 7 };
@@ -44,15 +48,27 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-        var arr = new int[] { 4, 2, 0, 1, 3 };
-        Console.WriteLine(SumTwo(arr));
+       //var arr = new int[] { 4, 2, 0, 1, 3 };
+       //Console.WriteLine(SumTwo(arr));
         //Sort.InsertionSortt(arr);
 
-       // Sort.SelectionSort(arr);
-       //foreach (var item in arr)
-       //{
-       //    Console.WriteLine(item);
-       //}
+        // Sort.SelectionSort(arr);
+        //foreach (var item in arr)
+        //{
+        //    Console.WriteLine(item);
+        //}
+
+        Console.WriteLine(ContainsX("hellox"));
+    }
+    public static bool ContainsX(string input)
+    {
+        for (int i = 0; i < input.Length; i++)
+        {
+            if (input[i] == 'x')
+                return true;
+        }
+
+        return false;
     }
     public static bool SumTwo(int[] arr)
     {
@@ -62,9 +78,9 @@ internal class Program
             {
                 if (arr[i] + arr[j] == 10)
                     return true;
-              
+
                 //if (i != j && arr[i] + arr[j] == 10)
-               //     return true;
+                //     return true;
             }
 
         }
