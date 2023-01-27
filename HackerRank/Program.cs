@@ -43,6 +43,33 @@ internal class Program
         //{
         //    Console.WriteLine(item);
         //}
+
+        var arr = new int[] { 4, 2, 0, 1, 3 };
+        Console.WriteLine(SumTwo(arr));
+        //Sort.InsertionSortt(arr);
+
+       // Sort.SelectionSort(arr);
+       //foreach (var item in arr)
+       //{
+       //    Console.WriteLine(item);
+       //}
+    }
+    public static bool SumTwo(int[] arr)
+    {
+        for (int i = 0; i < arr.Length; i++)
+        {
+            for (int j = i + 1; j < arr.Length; j++)
+            {
+                if (arr[i] + arr[j] == 10)
+                    return true;
+              
+                //if (i != j && arr[i] + arr[j] == 10)
+               //     return true;
+            }
+
+        }
+
+        return false;
     }
     public static int BeautifulDays(int i, int j, int k)
     {

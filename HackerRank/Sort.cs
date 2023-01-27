@@ -4,6 +4,29 @@ namespace HackerRank
 {
     public static class Sort
     {
+        public static void InsertionSortt(int[] arr)
+        {
+            int n = arr.Length;
+            int val = 0;
+            for (int i = 1; i < n; i++)
+            {
+                val = arr[i];
+                for (int j = i - 1; j >= 0;)
+                {
+                    if (val < arr[j])
+                    {
+                        arr[j + 1] = arr[j];
+                        j--;
+                        arr[j + 1] = val;
+                    }
+                    else
+                    {
+                        break;
+                    }
+                }
+
+            }
+        }
         public static void InsertionSort(int[] arr)
         {
             int n = arr.Length;
@@ -59,21 +82,21 @@ namespace HackerRank
             }
         }
 
-       public static void BubbleSort(int[] arr)
-       {
-           int temp;
-           for (int i = 0; i < arr.Length; i++)
-           {
-               for (int j = i + 1; j < arr.Length; j++)
-               {
-                   if (arr[i] > arr[j])
-                   {
-                       temp = arr[j];
-                       arr[j] = arr[i];
-                       arr[i] = temp;
-                   }
-               }
-           }
-       }
+        public static void BubbleSort(int[] arr)
+        {
+            int temp;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = i + 1; j < arr.Length; j++)
+                {
+                    if (arr[i] > arr[j])
+                    {
+                        temp = arr[j];
+                        arr[j] = arr[i];
+                        arr[i] = temp;
+                    }
+                }
+            }
+        }
     }
 }
