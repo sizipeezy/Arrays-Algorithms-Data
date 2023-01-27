@@ -6,6 +6,20 @@
 
     public class ArrayHelper
     {
+        public static bool Equals(int[] arr, int[] arr2)
+        {
+            if(arr.Length != arr2.Length)
+                return false;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] == arr2[i])
+                    return true;    
+            }
+
+            return false;
+        }
+
         public static List<int> Unique(int[] arr)
         {
             var result = new List<int>();

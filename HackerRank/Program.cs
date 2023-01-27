@@ -7,7 +7,12 @@ internal class Program
     {
         var numbers = new int[] { 1, 2, 3, 1, 2 };
 
+        var test1 = new int[] { 1, 2, 3 };
+        var test2 = new int[] { 1, 2, 3 };
+
         Console.WriteLine(string.Join(" ", ArrayHelper.Unique(numbers)));
+        Console.WriteLine(string.Join(" ", ArrayHelper.Equals(test1, test2)));
+
 
 
         //
