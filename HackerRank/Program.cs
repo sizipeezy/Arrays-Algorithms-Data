@@ -53,8 +53,8 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-       //var arr = new int[] { 4, 2, 0, 1, 3 };
-       //Console.WriteLine(SumTwo(arr));
+        //var arr = new int[] { 4, 2, 0, 1, 3 };
+        //Console.WriteLine(SumTwo(arr));
         //Sort.InsertionSortt(arr);
 
         // Sort.SelectionSort(arr);
@@ -63,7 +63,30 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
+        var test = new string[] { "a", "b", "c", "d" };
+        StringBuilder(test);
+
+        foreach (var item in test)
+        {
+            Console.WriteLine(item);
+        }
+
         Console.WriteLine(ContainsX("hellox"));
+    }
+    public static List<string> StringBuilder(string[] arr)
+    {
+        var result = new List<string>();
+
+        for (int i = 0; i < arr.Length; i++)
+        {
+            for (int j = 0; j < arr.Length; j++)
+            {
+                if (i != j)
+                    result.Add(arr[i] + arr[j]);
+            }
+        }
+
+        return result;
     }
     public static bool ContainsX(string input)
     {
