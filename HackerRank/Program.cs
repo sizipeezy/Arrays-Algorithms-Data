@@ -63,6 +63,17 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
+        var values = new[]
+        {
+            new[] { 1, 2 },
+            new[] { 2, 3 },
+            new[] { 4, 5 },
+        };
+
+       Console.WriteLine(string.Join(" " , ArrayHelper.Flatten(values)));
+
+
+
         var test = new string[] { "a", "b", "c", "d" };
         StringBuilder(test);
 

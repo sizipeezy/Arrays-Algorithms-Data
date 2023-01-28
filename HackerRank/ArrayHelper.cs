@@ -6,15 +6,18 @@
 
     public class ArrayHelper
     {
+        public static IEnumerable<int> Flatten(int[][] arr) =>
+          arr.SelectMany(x => x).ToArray();
+
         public static bool Equals(int[] arr, int[] arr2)
         {
-            if(arr.Length != arr2.Length)
+            if (arr.Length != arr2.Length)
                 return false;
 
             for (int i = 0; i < arr.Length; i++)
             {
                 if (arr[i] == arr2[i])
-                    return true;    
+                    return true;
             }
 
             return false;
