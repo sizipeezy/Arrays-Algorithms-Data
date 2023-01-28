@@ -63,6 +63,16 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
+        int[] arr = { 1, 2, 3, 4, 5 };
+        int size = 2;
+
+        var arrays = ArrayHelper.Split(arr, size);
+
+        foreach (var array in arrays)
+        {
+            Console.WriteLine(String.Join(", ", array));
+        }
+
         var values = new[]
         {
             new[] { 1, 2 },
