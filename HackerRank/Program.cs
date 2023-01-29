@@ -97,6 +97,35 @@ internal class Program
 
         var input = new string[] { "a", "b", "c", "d", "e", "b" };
         Console.WriteLine(FirstDuplicate(input));
+
+        Console.WriteLine("-------------------");
+
+        
+
+        Console.WriteLine(FirstNonDuplicate("minimum"));
+    }
+    public static char FirstNonDuplicate(string arr)
+    {
+        var dict = new Dictionary<char, int>();
+        var result = 'b';
+
+        foreach (var item in arr)
+        {
+            if (!dict.ContainsKey(item))
+                dict.Add(item, 1);
+            else
+                dict[item]++;
+        }
+
+        foreach (var item in dict)
+        {
+            if (item.Value <= 1)
+            {
+                result = item.Key;
+                break;
+            }
+        }
+        return result;
     }
     public static string FirstDuplicate(string[] arr)
     {
