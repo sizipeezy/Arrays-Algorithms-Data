@@ -65,37 +65,59 @@ internal class Program
 
         Console.WriteLine(string.Join(" ", InterSection(arr, arr2)));
 
-       // int size = 2;
-       //
-       // var arrays = ArrayHelper.Split(arr, size);
-       //
-       // foreach (var array in arrays)
-       // {
-       //     Console.WriteLine(String.Join(", ", array));
-       // }
-       //
-       // var values = new[]
-       // {
-       //     new[] { 1, 2 },
-       //     new[] { 2, 3 },
-       //     new[] { 4, 5 },
-       // };
-       //
-       //Console.WriteLine(string.Join(" " , ArrayHelper.Flatten(values)));
-       //
-       //
-       //
-       // var test = new string[] { "a", "b", "c", "d" };
-       // StringBuilder(test);
-       //
-       // foreach (var item in test)
-       // {
-       //     Console.WriteLine(item);
-       // }
-       //
-       // Console.WriteLine(ContainsX("hellox"));
-    }
+        // int size = 2;
+        //
+        // var arrays = ArrayHelper.Split(arr, size);
+        //
+        // foreach (var array in arrays)
+        // {
+        //     Console.WriteLine(String.Join(", ", array));
+        // }
+        //
+        // var values = new[]
+        // {
+        //     new[] { 1, 2 },
+        //     new[] { 2, 3 },
+        //     new[] { 4, 5 },
+        // };
+        //
+        //Console.WriteLine(string.Join(" " , ArrayHelper.Flatten(values)));
+        //
+        //
+        //
+        // var test = new string[] { "a", "b", "c", "d" };
+        // StringBuilder(test);
+        //
+        // foreach (var item in test)
+        // {
+        //     Console.WriteLine(item);
+        // }
+        //
+        // Console.WriteLine(ContainsX("hellox"));
 
+        var input = new string[] { "a", "b", "c", "d", "e", "b" };
+        Console.WriteLine(FirstDuplicate(input));
+    }
+    public static string FirstDuplicate(string[] arr)
+    {
+        var dict = new Dictionary<string, int>();
+        var result = string.Empty;
+
+        foreach (var item in arr)
+        {
+            if (!dict.ContainsKey(item))
+                dict.Add(item, 1);
+            else
+                dict[item]++;
+
+            if (dict[item] > 1)
+            {
+                result = item;
+                break;
+            }
+        }
+        return result;
+    }
     public static List<int> InterSection(int[] arr1, int[] arr2)
     {
         var dict = new Dictionary<int, int>();
