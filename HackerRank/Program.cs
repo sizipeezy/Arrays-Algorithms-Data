@@ -1,19 +1,16 @@
 ﻿using HackerRank;
-using System.ComponentModel.Design.Serialization;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        var numbers = new int[] { 1, 2, 3, 1, 2 };
-
-        var test1 = new int[] { 1, 2, 3 };
-        var test2 = new int[] { 1, 2, 3 };
-
-        Console.WriteLine(string.Join(" ", ArrayHelper.Unique(numbers)));
-        Console.WriteLine(string.Join(" ", ArrayHelper.Equals(test1, test2)));
-
-
+        //var numbers = new int[] { 1, 2, 3, 1, 2 };
+        //
+        //var test1 = new int[] { 1, 2, 3 };
+        //var test2 = new int[] { 1, 2, 3 };
+        //
+        //Console.WriteLine(string.Join(" ", ArrayHelper.Unique(numbers)));
+        //Console.WriteLine(string.Join(" ", ArrayHelper.Equals(test1, test2)));
 
         //
         //Console.Write(string.Join(" ", ArrayHelper.Reverse(numbers)));
@@ -64,35 +61,63 @@ internal class Program
         //}
 
         int[] arr = { 1, 2, 3, 4, 5 };
-        int size = 2;
+        int[] arr2 = { 1, 2, 3, 6, 8 };
 
-        var arrays = ArrayHelper.Split(arr, size);
+        Console.WriteLine(string.Join(" ", InterSection(arr, arr2)));
 
-        foreach (var array in arrays)
+       // int size = 2;
+       //
+       // var arrays = ArrayHelper.Split(arr, size);
+       //
+       // foreach (var array in arrays)
+       // {
+       //     Console.WriteLine(String.Join(", ", array));
+       // }
+       //
+       // var values = new[]
+       // {
+       //     new[] { 1, 2 },
+       //     new[] { 2, 3 },
+       //     new[] { 4, 5 },
+       // };
+       //
+       //Console.WriteLine(string.Join(" " , ArrayHelper.Flatten(values)));
+       //
+       //
+       //
+       // var test = new string[] { "a", "b", "c", "d" };
+       // StringBuilder(test);
+       //
+       // foreach (var item in test)
+       // {
+       //     Console.WriteLine(item);
+       // }
+       //
+       // Console.WriteLine(ContainsX("hellox"));
+    }
+
+    public static List<int> InterSection(int[] arr1, int[] arr2)
+    {
+        var dict = new Dictionary<int, int>();
+        var result = new List<int>();
+
+        foreach (var item in arr1)
         {
-            Console.WriteLine(String.Join(", ", array));
+            if (!dict.ContainsKey(item))
+                dict.Add(item, 1);
+            else
+                dict[item]++;
         }
 
-        var values = new[]
+        foreach (var item in arr2)
         {
-            new[] { 1, 2 },
-            new[] { 2, 3 },
-            new[] { 4, 5 },
-        };
-
-       Console.WriteLine(string.Join(" " , ArrayHelper.Flatten(values)));
-
-
-
-        var test = new string[] { "a", "b", "c", "d" };
-        StringBuilder(test);
-
-        foreach (var item in test)
-        {
-            Console.WriteLine(item);
+            if (dict.ContainsKey(item))
+            {
+                result.Add(item);
+            }
         }
 
-        Console.WriteLine(ContainsX("hellox"));
+        return result;
     }
     public static List<string> StringBuilder(string[] arr)
     {

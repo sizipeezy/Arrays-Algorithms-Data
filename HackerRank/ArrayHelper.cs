@@ -3,7 +3,6 @@
     using System.Collections.Generic;
     using System.Linq;
 
-
     public class ArrayHelper
     { 
         public static IEnumerable<IEnumerable<int>> Split(int[] arr, int size)
