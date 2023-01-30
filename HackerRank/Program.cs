@@ -4,6 +4,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        var input = "abcde";
+        Stack.Reverse(input);
+
         //var numbers = new int[] { 1, 2, 3, 1, 2 };
         //
         //var test1 = new int[] { 1, 2, 3 };
@@ -60,10 +63,10 @@ internal class Program
         //    Console.WriteLine(item);
         //}
 
-        int[] arr = { 1, 2, 3, 4, 5 };
-        int[] arr2 = { 1, 2, 3, 6, 8 };
-
-        Console.WriteLine(string.Join(" ", InterSection(arr, arr2)));
+       //int[] arr = { 1, 2, 3, 4, 5 };
+       //int[] arr2 = { 1, 2, 3, 6, 8 };
+       //
+       //Console.WriteLine(string.Join(" ", InterSection(arr, arr2)));
 
         // int size = 2;
         //
@@ -95,14 +98,14 @@ internal class Program
         //
         // Console.WriteLine(ContainsX("hellox"));
 
-        var input = new string[] { "a", "b", "c", "d", "e", "b" };
-        Console.WriteLine(FirstDuplicate(input));
-
-        Console.WriteLine("-------------------");
-
-        
-
-        Console.WriteLine(FirstNonDuplicate("minimum"));
+       // var input = new string[] { "a", "b", "c", "d", "e", "b" };
+       // Console.WriteLine(FirstDuplicate(input));
+       //
+       // Console.WriteLine("-------------------");
+       //
+       // 
+       //
+       // Console.WriteLine(FirstNonDuplicate("minimum"));
     }
     public static char FirstNonDuplicate(string arr)
     {
