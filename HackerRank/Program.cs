@@ -8,11 +8,14 @@ internal class Program
         Stack.Reverse(input);
 
 
-        int[] test = new int[] { 3, 2, 4, 1 };
-        Sort.SelectionSort(test);
+        int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
+       // Sort.SelectionSort(test);
+
+        ArrayHelper.SmallerNeighbours(test);
+
 
         int[] arr = { 15, 5, 10, 23 };
-        ArrayHelper.SubArraySum(arr, 23);
+       // ArrayHelper.SubArraySum(arr, 23);
         //var numbers = new int[] { 1, 2, 3, 1, 2 };
         //
         //var test1 = new int[] { 1, 2, 3 };

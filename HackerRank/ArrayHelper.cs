@@ -5,6 +5,21 @@
 
     public class ArrayHelper
     { 
+        public static void SmallerNeighbours(int[] arr)
+        {
+            var countResult = 0;
+
+            for (int i = 1; i < arr.Length; i++)
+            {
+                if((arr[i-1] < arr[i] && (arr[i+1]) < arr[i]))
+                {
+                    Console.WriteLine(arr[i]);
+                    countResult++;        
+                }
+            }
+            if(countResult <= 0)
+            Console.WriteLine("The array is in Ascending Order");
+        }
         public static void SubArraySum(int[] arr, int sum)
         {
             for (int i = 0; i < arr.Length; i++)
