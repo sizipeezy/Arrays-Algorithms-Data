@@ -5,6 +5,33 @@
 
     public class ArrayHelper
     { 
+        public static void SubArraySum(int[] arr, int sum)
+        {
+            for (int i = 0; i < arr.Length; i++)
+            {
+                int currentSum = arr[i];
+
+                if(currentSum == sum)
+                {
+                    Console.WriteLine($"Sum founded at index " + i);
+                    return;
+                }
+                else
+                {
+                    for (int j = i+1; j < arr.Length; j++)
+                    {
+                        currentSum += arr[j];
+
+                        if(currentSum == sum)
+                        {
+                            Console.WriteLine($"Sum found between: " + i + "and" + j);
+                            return;
+                        }
+                    }
+                }
+            }
+            Console.WriteLine($"No subarray founded.");
+        }
         public static IEnumerable<IEnumerable<int>> Split(int[] arr, int size)
         {
             for (var i = 0; i < arr.Length / size + 1; i++)
