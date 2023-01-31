@@ -4,18 +4,18 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var input = "abcde";
-        Stack.Reverse(input);
-
-
-        int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
-       // Sort.SelectionSort(test);
-
-        ArrayHelper.SmallerNeighbours(test);
-
-
-        int[] arr = { 15, 5, 10, 23 };
-       // ArrayHelper.SubArraySum(arr, 23);
+       //var input = "abcde";
+       //Stack.Reverse(input);
+       //
+       //
+       //int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
+       /// Sort.SelectionSort(test);
+       //
+       //ArrayHelper.SmallerNeighbours(test);
+       //
+       //
+       //int[] arr = { 15, 5, 10, 23 };
+        // ArrayHelper.SubArraySum(arr, 23);
         //var numbers = new int[] { 1, 2, 3, 1, 2 };
         //
         //var test1 = new int[] { 1, 2, 3 };
@@ -115,6 +115,25 @@ internal class Program
         // 
         //
         // Console.WriteLine(FirstNonDuplicate("minimum"));
+
+        CountDown(10);
+
+        Console.WriteLine(Factoriel(4));
+    }
+    public static long Factoriel(int num)
+    {
+        if (num == 1)
+            return 1;
+        else
+            return num * Factoriel(num - 1);
+    }
+    public static void CountDown(int num)
+    {
+        if (num == 0)
+            return;
+
+        Console.WriteLine(num);
+        CountDown(num - 1);
     }
     public static char FirstNonDuplicate(string arr)
     {
