@@ -116,12 +116,14 @@ internal class Program
         //
         // Console.WriteLine(FirstNonDuplicate("minimum"));
 
-        CountDown(10);
+       // CountDown(10);
 
-        Console.WriteLine(Factoriel(4));
+        //Console.WriteLine(Factoriel(4));
 
-        var input = new int[] { -1, 0, -3,  1 };
-       Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
+        var input = new int[] { 1, 2, 3,1 };
+        ArrayHelper.FindDuplicates(input);
+
+      // Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
         
     }
     public static long Factoriel(int num)

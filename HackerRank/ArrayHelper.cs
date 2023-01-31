@@ -5,6 +5,64 @@
 
     public class ArrayHelper
     {
+        public static bool SubArrayExists(int[] arr)
+        {
+            var hs = new HashSet<int>();
+            var sum = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                sum += arr[i];
+
+                if (arr[i] == 0 || sum == 0 || hs.Contains(sum))
+                    return true;
+
+                hs.Add(sum);
+            }
+
+            return false;
+        }
+        //O(N) time
+        public static void FindDuplicates(int[] arr)
+        {
+            
+            for (int i = 0; i < arr.Length; i++)
+            {
+                var ex = arr[i] % arr.Length;
+                arr[ex] = arr[ex] + arr.Length;
+            }
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] >= arr.Length * 2)
+                    Console.WriteLine(i + " ");
+            }
+        }
+        public static void UnionBetween2Arrays(int[] arr1, int[] arr2)
+        {
+            int i = 0;
+            int j = 0;
+            int m = arr1.Length;
+            int n = arr2.Length;
+
+            while (i < m && j < n)
+            {
+                if (arr1[i] < arr2[j])
+                    Console.Write(arr1[i++] + " ");
+                else if (arr2[j] < arr1[i])
+                    Console.Write(arr2[j++] + " ");
+                else
+                {
+                    Console.WriteLine(arr2[j++] + " ");
+                    i++;
+                }
+            }
+
+            while (i < m)
+                Console.Write(arr1[i++] + " ");
+            while (j < n)
+                Console.Write(arr2[j++] + " ");
+        }
         public static int[] MoveNegative(int[] arr)
         {
 
