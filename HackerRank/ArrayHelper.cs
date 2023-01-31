@@ -4,7 +4,27 @@
     using System.Linq;
 
     public class ArrayHelper
-    { 
+    {
+        public static int[] MoveNegative(int[] arr)
+        {
+
+            int temp;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                for (int j = 0; j < arr.Length; j++)
+                {
+                    if (arr[i] < arr[j])
+                    {
+                        temp = arr[i];
+                        arr[i] = arr[j];
+                        arr[j] = temp;
+                    }
+                }
+
+            }
+
+            return arr;
+        }
         public static int FindKElement(int[] arr, int k)
         {
             Sort.SortFunction(arr);
@@ -17,14 +37,14 @@
 
             for (int i = 1; i < arr.Length; i++)
             {
-                if((arr[i-1] < arr[i] && (arr[i+1]) < arr[i]))
+                if ((arr[i - 1] < arr[i] && (arr[i + 1]) < arr[i]))
                 {
                     Console.WriteLine(arr[i]);
-                    countResult++;        
+                    countResult++;
                 }
             }
-            if(countResult <= 0)
-            Console.WriteLine("The array is in Ascending Order");
+            if (countResult <= 0)
+                Console.WriteLine("The array is in Ascending Order");
         }
         public static void SubArraySum(int[] arr, int sum)
         {
@@ -32,18 +52,18 @@
             {
                 int currentSum = arr[i];
 
-                if(currentSum == sum)
+                if (currentSum == sum)
                 {
                     Console.WriteLine($"Sum founded at index " + i);
                     return;
                 }
                 else
                 {
-                    for (int j = i+1; j < arr.Length; j++)
+                    for (int j = i + 1; j < arr.Length; j++)
                     {
                         currentSum += arr[j];
 
-                        if(currentSum == sum)
+                        if (currentSum == sum)
                         {
                             Console.WriteLine($"Sum found between: " + i + "and" + j);
                             return;

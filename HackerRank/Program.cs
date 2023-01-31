@@ -120,9 +120,9 @@ internal class Program
 
         Console.WriteLine(Factoriel(4));
 
-        var input = new int[] { 7, 10, 4, 3, 20, 15 };
-
-        Console.WriteLine(ArrayHelper.FindKElement(input, 3));
+        var input = new int[] { -1, 0, -3,  1 };
+       Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
+        
     }
     public static long Factoriel(int num)
     {
