@@ -5,6 +5,12 @@
 
     public class ArrayHelper
     { 
+        public static int FindKElement(int[] arr, int k)
+        {
+            Sort.SortFunction(arr);
+
+            return arr[k - 1];
+        }
         public static void SmallerNeighbours(int[] arr)
         {
             var countResult = 0;

@@ -119,6 +119,10 @@ internal class Program
         CountDown(10);
 
         Console.WriteLine(Factoriel(4));
+
+        var input = new int[] { 7, 10, 4, 3, 20, 15 };
+
+        Console.WriteLine(ArrayHelper.FindKElement(input, 3));
     }
     public static long Factoriel(int num)
     {
