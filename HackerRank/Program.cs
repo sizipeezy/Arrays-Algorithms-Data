@@ -124,6 +124,9 @@ internal class Program
         var str = "axcbxcbx";
         Console.WriteLine(Recursion.CountX(str));
 
+
+        Console.Write(Recursion.NumberOfPaths(10));
+
       //int[] arr = { 1, 2, 3, 4, 5 };
       //
       //Console.Write(Recursion.Sum(arr, arr.Length));

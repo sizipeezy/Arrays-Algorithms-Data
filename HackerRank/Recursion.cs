@@ -2,6 +2,15 @@
 {
     public static class Recursion
     {
+        public static int NumberOfPaths(int n)
+        {
+            if (n < 0)
+                return 0;
+            else if (n == 1 || n == 0)
+                return 1;
+
+            return NumberOfPaths(n - 1) + NumberOfPaths(n - 2) + NumberOfPaths(n - 3);
+        }
         public static int CountX(string input)
         {
             if (input.Length == 1)
