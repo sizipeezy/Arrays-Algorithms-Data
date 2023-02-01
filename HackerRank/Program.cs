@@ -5,9 +5,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //var input = "abcde";
+        var input = "abcde";
         //Stack.Reverse(input);
-        //
+       Console.Write(Recursion.Reverse(input));
         //
         //int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
         /// Sort.SelectionSort(test);

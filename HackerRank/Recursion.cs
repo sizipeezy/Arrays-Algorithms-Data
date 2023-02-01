@@ -2,6 +2,13 @@
 {
     public static class Recursion
     {
+        public static string Reverse(string str)
+        {
+            if (str.Length <= 1) //the program base case
+                return str;
+            else
+                return Reverse(str.Substring(1)) + str[0];
+        }
         public static int Sum(int[] arr, int n)
         {
             if (n <= 0)
