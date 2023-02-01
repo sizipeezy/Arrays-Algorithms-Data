@@ -14,7 +14,11 @@
             {
                 sum += arr[i];
 
-                if (arr[i] == 0 || sum == 0 || hs.Contains(sum))
+                if (arr[i] == 0)
+                    return true;
+                else if (sum == 0)
+                    return true;
+                else if (hs.Contains(sum))
                     return true;
 
                 hs.Add(sum);
@@ -25,7 +29,7 @@
         //O(N) time
         public static void FindDuplicates(int[] arr)
         {
-            
+
             for (int i = 0; i < arr.Length; i++)
             {
                 var ex = arr[i] % arr.Length;

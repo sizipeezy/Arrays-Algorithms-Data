@@ -1,20 +1,21 @@
 ﻿using HackerRank;
+using System;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-       //var input = "abcde";
-       //Stack.Reverse(input);
-       //
-       //
-       //int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
-       /// Sort.SelectionSort(test);
-       //
-       //ArrayHelper.SmallerNeighbours(test);
-       //
-       //
-       //int[] arr = { 15, 5, 10, 23 };
+        //var input = "abcde";
+        //Stack.Reverse(input);
+        //
+        //
+        //int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
+        /// Sort.SelectionSort(test);
+        //
+        //ArrayHelper.SmallerNeighbours(test);
+        //
+        //
+        //int[] arr = { 15, 5, 10, 23 };
         // ArrayHelper.SubArraySum(arr, 23);
         //var numbers = new int[] { 1, 2, 3, 1, 2 };
         //
@@ -116,15 +117,22 @@ internal class Program
         //
         // Console.WriteLine(FirstNonDuplicate("minimum"));
 
-       // CountDown(10);
+        // CountDown(10);
 
         //Console.WriteLine(Factoriel(4));
+        var arr = new int[]  { 4, 2, -3, 1, 6 };
 
-        var input = new int[] { 1, 2, 3,1 };
-        ArrayHelper.FindDuplicates(input);
+        ArrayHelper.SubArrayExists(arr);
+
+        var arr2 = new int[] { 1, 2, 3, 4 };
+        Recursion.DoubleArray(arr2, 0);
+        foreach (var item in arr2)
+        {
+            Console.WriteLine(item);
+        }
 
       // Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
-        
+
     }
     public static long Factoriel(int num)
     {
