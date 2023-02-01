@@ -2,6 +2,19 @@
 {
     public static class Recursion
     {
+        public static int CountX(string input)
+        {
+            if (input.Length == 1)
+                if (input[0] == 'x')
+                    return 1;
+                else
+                    return 0;
+
+            if (input[0] == 'x')
+                return 1 + CountX(input.Substring(1));
+            else
+                return CountX(input.Substring(1));
+        }
         public static string Reverse(string str)
         {
             if (str.Length <= 1) //the program base case

@@ -5,9 +5,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var input = "abcde";
-        //Stack.Reverse(input);
-       Console.Write(Recursion.Reverse(input));
+      // var input = "abcde";
+      // //Stack.Reverse(input);
+      //Console.Write(Recursion.Reverse(input));
         //
         //int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
         /// Sort.SelectionSort(test);
@@ -121,10 +121,13 @@ internal class Program
 
         //Console.WriteLine(Factoriel(4));
 
-        int[] arr = { 1, 2, 3, 4, 5 };
+        var str = "axcbxcbx";
+        Console.WriteLine(Recursion.CountX(str));
 
-        Console.Write(Recursion.Sum(arr, arr.Length));
-
+      //int[] arr = { 1, 2, 3, 4, 5 };
+      //
+      //Console.Write(Recursion.Sum(arr, arr.Length));
+      //
         // Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
 
     }
