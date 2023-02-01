@@ -120,18 +120,12 @@ internal class Program
         // CountDown(10);
 
         //Console.WriteLine(Factoriel(4));
-        var arr = new int[]  { 4, 2, -3, 1, 6 };
 
-        ArrayHelper.SubArrayExists(arr);
+        int[] arr = { 1, 2, 3, 4, 5 };
 
-        var arr2 = new int[] { 1, 2, 3, 4 };
-        Recursion.DoubleArray(arr2, 0);
-        foreach (var item in arr2)
-        {
-            Console.WriteLine(item);
-        }
+        Console.Write(Recursion.Sum(arr, arr.Length));
 
-      // Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
+        // Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
 
     }
     public static long Factoriel(int num)
