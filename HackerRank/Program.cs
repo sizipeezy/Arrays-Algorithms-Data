@@ -9,11 +9,13 @@ internal class Program
         var result = 0;
 
        Recursion.SumEven(input, input.Length - 1, result);
-      
 
-      // var input = "abcde";
-      // //Stack.Reverse(input);
-      //Console.Write(Recursion.Reverse(input));
+
+        Console.Write(Recursion.tri(7));
+
+        // var input = "abcde";
+        // //Stack.Reverse(input);
+        //Console.Write(Recursion.Reverse(input));
         //
         //int[] test = new int[] { 10, 20, 15, 2, 23, 90, 67 };
         /// Sort.SelectionSort(test);
@@ -99,6 +101,9 @@ internal class Program
         //     new[] { 2, 3 },
         //     new[] { 4, 5 },
         // };
+
+        Console.WriteLine("--------fibbonaci-----");
+       Console.WriteLine(Recursion.Fibbonaci(10));
         //
         //Console.WriteLine(string.Join(" " , ArrayHelper.Flatten(values)));
         //
@@ -133,10 +138,10 @@ internal class Program
         //
         //Console.Write(Recursion.NumberOfPaths(10));
 
-      //int[] arr = { 1, 2, 3, 4, 5 };
-      //
-      //Console.Write(Recursion.Sum(arr, arr.Length));
-      //
+        //int[] arr = { 1, 2, 3, 4, 5 };
+        //
+        //Console.Write(Recursion.Sum(arr, arr.Length));
+        //
         // Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
 
     }

@@ -2,6 +2,18 @@
 {
     public static class Recursion
     {
+        public static int Fibbonaci(int n)
+        {
+            if (n == 0 || n == 1)
+                return n;
+
+            return Fibbonaci(n - 2) + Fibbonaci(n - 1);
+        }
+        public static int tri(int n)
+        {
+            if (n == 1) return 1;
+            return (n) + tri(n - 1);
+        }
         public static void SumEven(int[] arr, int n, int sum)
         {
             if(n < 0)
