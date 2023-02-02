@@ -8,7 +8,7 @@ internal class Program
         var input = new int[] { 1, 2, 3, 4, 5, 6, 7 };
         var result = 0;
 
-       Recursion.SumEven(input, input.Length - 1, result);
+        Recursion.SumEven(input, input.Length - 1, result);
 
 
         Console.Write(Recursion.tri(7));
@@ -103,7 +103,7 @@ internal class Program
         // };
 
         Console.WriteLine("--------fibbonaci-----");
-       Console.WriteLine(Recursion.Fibbonaci(10));
+        Console.WriteLine(Recursion.Fibbonaci(10));
         //
         //Console.WriteLine(string.Join(" " , ArrayHelper.Flatten(values)));
         //
@@ -143,6 +143,128 @@ internal class Program
         //Console.Write(Recursion.Sum(arr, arr.Length));
         //
         // Console.WriteLine(string.Join(" ", ArrayHelper.MoveNegative(input)));
+
+        // int n = int.Parse(Console.ReadLine());
+
+        var inputText = Console.ReadLine();
+        Square2x2Sum(inputText);
+        //Console.Write(FindSymbol(n, '!'));
+
+    }
+    public static void Square2x2Sum(string input)
+    {
+        var arr = ReadDimensionalArray(input);
+
+        var currentSum = 0;
+        var currentRow = 0;
+        var currentCol = 0;
+
+        for (int row = 0; row < arr.GetLength(0) - 1; row++)
+        {
+            for (int col = 0; col < arr.GetLength(1) - 1; col++)
+            {
+                var squareSum = arr[row, col] + arr[row + 1, col] + arr[row, col + 1] + arr[row + 1, col + 1];
+                if (squareSum > currentSum)
+                {
+                    currentSum = squareSum;
+                    currentRow = row;
+                    currentCol = col;
+                }
+            }
+        }
+
+        Console.WriteLine(arr[currentRow, currentCol] + " " + arr[currentRow, currentCol + 1]);
+        Console.WriteLine(arr[currentRow + 1, currentCol] + " " + arr[currentRow + 1, currentCol + 1]);
+        Console.WriteLine(currentSum);
+    }
+    public static int[,] ReadDimensionalArray(string input)
+    {
+        int[] size = input.Split(", ").Select(int.Parse).ToArray();
+
+        int[,] matrix = new int[size[0], size[1]];
+
+        for (int row = 0; row < matrix.GetLength(0); row++)
+        {
+            int[] columns = Console.ReadLine().Split(", ").Select(int.Parse).ToArray();
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                matrix[row, col] = columns[col];
+            }
+        }
+
+        return matrix;
+    }
+    public static int[,] ReadDimensionalArrayWithSymbols(int n)
+    {
+        int[,] matrix = new int[n, n];
+
+        for (int rows = 0; rows < matrix.GetLength(0); rows++)
+        {
+            var symbols = Console.ReadLine();
+            for (int cols = 0; cols < matrix.GetLength(1); cols++)
+            {
+                matrix[rows, cols] = symbols[cols];
+            }
+        }
+
+        return matrix;
+    }
+    public static string FindSymbol(int n, char symbol)
+    {
+        var arr = ReadDimensionalArrayWithSymbols(n);
+
+        for (int i = 0; i < arr.GetLength(0); i++)
+        {
+            for (int j = 0; j < arr.GetLength(1); j++)
+            {
+                if (arr[i, j] == symbol)
+                    return $"({i},{j})";
+            }
+        }
+
+        return $"Not found";
+    }
+    public static int SumDiagonal(int[,] arr)
+    {
+        var sum = 0;
+        for (int row = 0; row < arr.GetLength(0); row++)
+        {
+            for (int col = 0; col < arr.GetLength(1); col++)
+            {
+                if (row == col)
+                {
+                    sum += arr[row, col];
+                    continue;
+                }
+            }
+        }
+
+        return sum;
+    }
+    public static void SumMatrixElements(int[] input)
+    {
+        int rows = input[0];
+        int cols = input[1];
+
+        int[,] matrix = new int[rows, cols];
+
+        int sum = 0;
+        for (int row = 0; row < matrix.GetLength(0); row++)
+        {
+            int[] inputLine = Console.ReadLine().Split(", ", StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse)
+                .ToArray();
+
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                matrix[row, col] = inputLine[col];
+                sum += matrix[row, col];
+            }
+        }
+
+        Console.WriteLine(rows);
+        Console.WriteLine(cols);
+        Console.WriteLine(sum);
 
     }
     public static long Factoriel(int num)
