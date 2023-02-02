@@ -2,6 +2,20 @@
 {
     public static class Recursion
     {
+        public static void SumEven(int[] arr, int n, int sum)
+        {
+            if(n < 0)
+            {
+                Console.WriteLine(sum);
+                return;
+            }
+
+            if ((arr[n]) % 2 == 0)
+                sum += arr[n];
+
+            SumEven(arr, n - 1, sum);
+
+        }
         public static int NumberOfPaths(int n)
         {
             if (n < 0)

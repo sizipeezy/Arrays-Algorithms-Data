@@ -5,6 +5,12 @@ internal class Program
 {
     private static void Main(string[] args)
     {
+        var input = new int[] { 1, 2, 3, 4, 5, 6, 7 };
+        var result = 0;
+
+       Recursion.SumEven(input, input.Length - 1, result);
+      
+
       // var input = "abcde";
       // //Stack.Reverse(input);
       //Console.Write(Recursion.Reverse(input));
@@ -121,11 +127,11 @@ internal class Program
 
         //Console.WriteLine(Factoriel(4));
 
-        var str = "axcbxcbx";
-        Console.WriteLine(Recursion.CountX(str));
-
-
-        Console.Write(Recursion.NumberOfPaths(10));
+        //var str = "axcbxcbx";
+        //Console.WriteLine(Recursion.CountX(str));
+        //
+        //
+        //Console.Write(Recursion.NumberOfPaths(10));
 
       //int[] arr = { 1, 2, 3, 4, 5 };
       //
