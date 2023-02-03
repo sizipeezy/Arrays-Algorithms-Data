@@ -5,13 +5,34 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var input = new int[] { 2, 5, -4, 11, 0, 18, 22, 67, 51, 6, };
-         Sort.QuickSort(input, 0, input.Length - 1);
+        var input = new int[] { 5, 4, 3, 2, 1 };
+        var result = CalculateDigits(input);
 
-        foreach (var item in input)
+        Console.WriteLine(result);
+    }
+    public static int CalculateDigits(int[] arr)
+    {
+        var currentNum = 0;
+        int sum = 0;
+
+        for (int i = 0; i < arr.Length; i++)
         {
-            Console.Write(item + " ");
+            currentNum = arr[i];
+            sum += currentNum % 10;
+            currentNum = currentNum / 10;
+            
         }
+        return sum;
+    }
+    public static List<int> Reverse(List<int> nums)
+    {
+        var result = new List<int>();
+
+        for (int i = nums.Count - 1; i >= 0; i--)
+        {
+            result.Add(nums[i]);
+        }
+        return result;
     }
     public static void Square2x2Sum(string input)
     {
