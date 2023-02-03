@@ -6,9 +6,50 @@ internal class Program
     private static void Main(string[] args)
     {
         string input = Console.ReadLine();
-        DiagnoalDifference(input);
+        Squares2x2Calculate(input);
     }
 
+    public static void Squares2x2Calculate(string input)
+    {
+        int[] dimensions = input
+                .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+               .Select(int.Parse)
+               .ToArray();
+
+        int row = dimensions[0];
+        int col = dimensions[1];
+
+        char[,] matrix = new char[row, col];
+
+        for (int rows = 0; rows < matrix.GetLength(0); rows++)
+        {
+            char[] columns = Console.ReadLine()
+                                    .Split(" ", StringSplitOptions.RemoveEmptyEntries)
+                                    .Select(char.Parse)
+                                    .ToArray();
+
+            for (int cols = 0; cols < matrix.GetLength(1); cols++)
+            {
+                matrix[rows, cols] = columns[cols];
+            }
+        }
+
+        int sumOfMatrix = 0;
+        for (int rows = 0; rows < matrix.GetLength(0) - 1; rows++)
+        {
+            for (int cols = 0; cols < matrix.GetLength(1) - 1; cols++)
+            {
+                if (matrix[rows, cols] == matrix[rows + 1, cols] &&
+                    matrix[rows, cols] == matrix[rows + 1, cols + 1] &&
+                    matrix[rows, cols] == matrix[rows, cols + 1])
+                {
+                    sumOfMatrix++;
+                }
+            }
+        }
+        Console.WriteLine(sumOfMatrix);
+
+    }
     public static void DiagnoalDifference(string input)
     {
         int n = int.Parse(input);
