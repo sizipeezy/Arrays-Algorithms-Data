@@ -4,6 +4,51 @@ namespace HackerRank
 {
     public static class Sort
     {
+        public static void QuickSort(int[] arr, int leftIndex, int rightIndex)
+        {
+            if(leftIndex < rightIndex)
+            {
+                int pivot = Partition(arr, leftIndex, rightIndex);
+
+                if(pivot > 1)
+                {
+                    QuickSort(arr, leftIndex, pivot - 1);
+                }
+                if(pivot + 1 < rightIndex)
+                {
+                    QuickSort(arr, pivot + 1, rightIndex);
+                }
+            }
+        }
+        public static int Partition(int[] arr, int leftIndex, int rightIndex)
+        {
+            int pivot = arr[leftIndex];
+            while (true)
+            {
+                while (arr[leftIndex] < pivot)
+                {
+                    leftIndex++;
+                }
+
+                while (arr[rightIndex] > pivot)
+                {
+                    rightIndex--;
+                }
+
+                if(leftIndex < rightIndex)
+                {
+                    if (arr[leftIndex] == arr[rightIndex]) return rightIndex;
+
+                    int temp = arr[leftIndex];
+                    arr[leftIndex] = arr[rightIndex];
+                    arr[rightIndex] = temp;
+                }
+                else
+                {
+                    return rightIndex;
+                }
+            }
+        }
         public static void InsertionSortt(int[] arr)
         {
             int n = arr.Length;
