@@ -5,10 +5,81 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var input = new int[] { 5, 4, 3, 2, 1 };
-        var result = CalculateDigits(input);
+        string input = Console.ReadLine();
+        DiagnoalDifference(input);
+    }
 
-        Console.WriteLine(result);
+    public static void DiagnoalDifference(string input)
+    {
+        int n = int.Parse(input);
+
+        int[,] matrix = new int[n, n];
+
+        for (int row = 0; row < n; row++)
+        {
+            var colElements = Console.ReadLine().Split().Select(int.Parse).ToArray();
+
+            for (int col = 0; col < n; col++)
+            {
+                matrix[row, col] = colElements[col];
+            }
+        }
+
+
+        var sum = 0;
+
+        for (int row = 0; row < matrix.GetLength(0); row++)
+        {
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                if (row == col)
+                    sum += matrix[row, col];
+            }
+        }
+
+        var sum2 = 0;
+        int index = matrix.GetLength(1) - 1;
+
+        for (int row = 0; row < matrix.GetLength(0); row++)
+        {
+            sum2 += matrix[row, index];
+            index--;
+        }
+
+        int difference = Math.Abs(sum - sum2);
+        Console.WriteLine(difference);
+    }
+
+    public static void Initiliaze(int[] A, int[] D)
+    {
+        int n = A.Length;
+
+        D[0] = A[0];
+        D[n] = 0;
+        for (int i = 1; i < n; i++)
+            D[i] = A[i] - A[i - 1];
+    }
+    public static int Print(int[] A, int[] D)
+    {
+        for (int i = 0; i < A.Length; i++)
+        {
+
+            if (i == 0)
+                A[i] = D[i];
+            else
+                A[i] = D[i] + A[i - 1];
+
+            Console.Write(A[i] + " ");
+        }
+
+        Console.WriteLine();
+
+        return 0;
+    }
+    public static void Update(int[] arr, int start, int end, int value)
+    {
+        arr[start] += value;
+        arr[end + 1] -= value;
     }
     public static int CalculateDigits(int[] arr)
     {
@@ -20,7 +91,7 @@ internal class Program
             currentNum = arr[i];
             sum += currentNum % 10;
             currentNum = currentNum / 10;
-            
+
         }
         return sum;
     }
@@ -64,7 +135,7 @@ internal class Program
     {
         int[] size = input.Split(", ").Select(int.Parse).ToArray();
 
-        int[,] matrix = new int[size[0], size[1]];
+        int[,] matrix = new int[size[0], size[0]];
 
         for (int row = 0; row < matrix.GetLength(0); row++)
         {
