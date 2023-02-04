@@ -1,11 +1,26 @@
 ﻿using HackerRank;
 using System;
+using System.Text;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        
+        var inut = "hello";
+        FindAllSubstrings(inut);
+    }
+ 
+    public static void FindAllSubstrings(string input)
+    {
+        for (int i = 0; i < input.Length; i++)
+        {
+            var sb = new StringBuilder(input.Length - 1);
+            for (int j = 0; j < input.Length; j++)
+            {
+                sb.Append(input[j]);
+                Console.Write(sb + " ");
+            }
+        }
     }
     public static void Find3x3Matrix(string input)
     {
