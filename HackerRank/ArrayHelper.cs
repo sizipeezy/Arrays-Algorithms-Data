@@ -3,8 +3,25 @@
     using System.Collections.Generic;
     using System.Linq;
 
-    public class ArrayHelper
+    public static class ArrayHelper
     {
+        public static void RotateLeft(int[] arr)
+        {
+            int n = arr.Length;
+            int temp;
+
+            for (int i = n - 1; i > 0; i--)
+            {
+                temp = arr[n - 1];
+                arr[n - 1] = arr[i - 1];
+                arr[i - 1] = temp;  
+            }
+
+            foreach (var item in arr)
+            {
+                Console.WriteLine(item + " ");
+            }
+        } 
         public static bool SubArrayExists(int[] arr)
         {
             var hs = new HashSet<int>();

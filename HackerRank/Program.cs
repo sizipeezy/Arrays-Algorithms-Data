@@ -6,8 +6,11 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var inut = "hello";
-        FindAllSubstrings(inut);
+        //var inut = "hello";
+        //FindAllSubstrings(inut);
+
+        var input = new int[] { 2, 3, 4, 5 };
+        ArrayHelper.RotateLeft(input);
     }
  
     public static void FindAllSubstrings(string input)
