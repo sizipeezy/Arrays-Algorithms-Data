@@ -5,12 +5,36 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        string input = Console.ReadLine();
+        int rows = int.Parse(Console.ReadLine());
+        char[,] board = new char[rows, rows];
 
-        Find3x3Matrix(input);
+        for (int row = 0; row < board.GetLength(0); row++)
+        {
+            string input = Console.ReadLine();
+            for (int col = 0; col < board.GetLength(1); col++)
+            {
+                board[row, col] = input[col];
+            }
+        }
 
+        int horseCounter = 0;
+        for (int row = 0; row < board.GetLength(0); row++)
+        {
+            for (int col = 0; col < board.GetLength(1); col++)
+            {
+
+                if(row >= 0 && row < board.GetLength(0) &&
+                     col >= 0 && col < board.GetLength(1))
+                {
+                    if (board[row + 1, col + 2] == 'K' || board[row + 2, col + 1] == 'K')
+                        horseCounter++;
+                }
+               
+            }
+        }
+
+        Console.WriteLine(horseCounter);
     }
-
     public static void Find3x3Matrix(string input)
     {
         var arr = CreateRectangularMatrix(input);
@@ -20,13 +44,13 @@ internal class Program
 
         for (int row = 0; row < arr.GetLength(0) - 2; row++)
         {
-            for (int col = 0;  col < arr.GetLength(1) - 2;  col++)
+            for (int col = 0; col < arr.GetLength(1) - 2; col++)
             {
                 int sum = arr[row, col] + arr[row + 1, col] + arr[row + 2, col]
                     + arr[row + 1, col] + arr[row + 1, col + 1] + arr[row + 1, col + 2]
                     + arr[row + 2, col] + arr[row + 2, col + 1] + arr[row + 2, col + 2];
 
-                if(sum > current3x3Sum)
+                if (sum > current3x3Sum)
                 {
                     current3x3Sum = sum;
                     startCol = col;
