@@ -5,35 +5,7 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        int rows = int.Parse(Console.ReadLine());
-        char[,] board = new char[rows, rows];
-
-        for (int row = 0; row < board.GetLength(0); row++)
-        {
-            string input = Console.ReadLine();
-            for (int col = 0; col < board.GetLength(1); col++)
-            {
-                board[row, col] = input[col];
-            }
-        }
-
-        int horseCounter = 0;
-        for (int row = 0; row < board.GetLength(0); row++)
-        {
-            for (int col = 0; col < board.GetLength(1); col++)
-            {
-
-                if(row >= 0 && row < board.GetLength(0) &&
-                     col >= 0 && col < board.GetLength(1))
-                {
-                    if (board[row + 1, col + 2] == 'K' || board[row + 2, col + 1] == 'K')
-                        horseCounter++;
-                }
-               
-            }
-        }
-
-        Console.WriteLine(horseCounter);
+        
     }
     public static void Find3x3Matrix(string input)
     {
