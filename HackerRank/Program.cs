@@ -6,9 +6,62 @@ internal class Program
     private static void Main(string[] args)
     {
         string input = Console.ReadLine();
-        Squares2x2Calculate(input);
+
+        Find3x3Matrix(input);
+
     }
 
+    public static void Find3x3Matrix(string input)
+    {
+        var arr = CreateRectangularMatrix(input);
+        var current3x3Sum = int.MinValue;
+        var startRow = 0;
+        var startCol = 0;
+
+        for (int row = 0; row < arr.GetLength(0) - 2; row++)
+        {
+            for (int col = 0;  col < arr.GetLength(1) - 2;  col++)
+            {
+                int sum = arr[row, col] + arr[row + 1, col] + arr[row + 2, col]
+                    + arr[row + 1, col] + arr[row + 1, col + 1] + arr[row + 1, col + 2]
+                    + arr[row + 2, col] + arr[row + 2, col + 1] + arr[row + 2, col + 2];
+
+                if(sum > current3x3Sum)
+                {
+                    current3x3Sum = sum;
+                    startCol = col;
+                    startRow = row;
+                }
+            }
+        }
+
+        Console.WriteLine($"Sum = {current3x3Sum}");
+        for (int i = startRow; i <= startRow + 2; i++)
+        {
+            for (int j = startCol; j <= startCol + 2; j++)
+            {
+                Console.Write($"{arr[i, j]} ");
+            }
+            Console.WriteLine();
+        }
+    }
+    public static int[,] CreateRectangularMatrix(string input)
+    {
+        var size = input.Split(" ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse).ToArray();
+        var matrix = new int[size[0], size[1]];
+
+        for (int row = 0; row < matrix.GetLength(0); row++)
+        {
+            var columns = Console.ReadLine().Split(" ", StringSplitOptions.RemoveEmptyEntries).Select(int.Parse)
+                .ToArray();
+            for (int col = 0; col < matrix.GetLength(1); col++)
+            {
+                matrix[row, col] = columns[col];
+            }
+        }
+
+        return matrix;
+    }
     public static void Squares2x2Calculate(string input)
     {
         int[] dimensions = input
