@@ -5,6 +5,33 @@
 
     public static class ArrayHelper
     {
+        public static IEnumerable<int> RemoveDuplicates(int[] arr)
+        {
+            var hash = new HashSet<int>();
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                hash.Add(arr[i]);
+            }
+
+            return hash;
+        }
+
+        public static void LargestAndSmallest(int[] arr)
+        {
+            var smallest = 0;
+            var largest = 0;
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] > largest)
+                    largest = arr[i];
+                else if (arr[i] < smallest)
+                    smallest = arr[i];
+            }
+
+            Console.WriteLine(smallest);
+            Console.WriteLine(largest);
+        }
         public static IEnumerable<int> OrderDescending(int[] arr)
         {
             var orderedResult  = new List<int>();   

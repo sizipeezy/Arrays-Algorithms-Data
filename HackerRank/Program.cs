@@ -7,7 +7,13 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var nums = new int[] { 2, 5, 3, 1, 4 };
+        var nums = new int[] { 2, 5, -7, 1, 4, 4, 2 };
+
+        Console.WriteLine(string.Join(" ", ArrayHelper.RemoveDuplicates(nums)));
+
+        ArrayHelper.LargestAndSmallest(nums);
+
+        ArrayHelper.SubArrayExists(nums);
 
         Console.WriteLine(string.Join(" ", ArrayHelper.OrderDescending(nums)));
     }
