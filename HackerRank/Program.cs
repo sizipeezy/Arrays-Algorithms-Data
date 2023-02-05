@@ -7,18 +7,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        BinaryTree nums = new BinaryTree();
-        nums.Insert(50);
-        nums.Insert(17);
-        nums.Insert(23);
-        nums.Insert(12);
-        nums.Insert(19);
-        nums.Insert(54);
-        nums.Insert(9);
-        nums.Insert(14);
-        nums.Insert(67);
-        nums.Insert(76);
-        nums.Insert(72);
+        var nums = new int[] { 2, 5, 3, 1, 4 };
+
+        Console.WriteLine(string.Join(" ", ArrayHelper.OrderDescending(nums)));
     }
  
     public static void FindAllSubstrings(string input)

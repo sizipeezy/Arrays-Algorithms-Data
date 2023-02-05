@@ -5,6 +5,18 @@
 
     public static class ArrayHelper
     {
+        public static IEnumerable<int> OrderDescending(int[] arr)
+        {
+            var orderedResult  = new List<int>();   
+            var result = Sort.SortFunction(arr);
+
+            for (int i = arr.Length - 1; i >= 0; i--)
+            {
+                orderedResult.Add(result[i]);
+            }
+
+            return orderedResult;
+        }
         public static void RotateLeft(int[] arr)
         {
             int n = arr.Length;

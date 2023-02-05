@@ -109,7 +109,7 @@ namespace HackerRank
             }
             return array;
         }
-        public static void SortFunction(int[] arr)
+        public static int[] SortFunction(int[] arr)
         {
             int temp;
             for (int i = 0; i < arr.Length; i++)
@@ -125,6 +125,8 @@ namespace HackerRank
                 }
 
             }
+
+            return arr;
         }
 
         public static void BubbleSort(int[] arr)
