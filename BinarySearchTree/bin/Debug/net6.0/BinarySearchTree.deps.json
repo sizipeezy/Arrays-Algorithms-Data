@@ -6,14 +6,6 @@
   "compilationOptions": {},
   "targets": {
     ".NETCoreApp,Version=v6.0": {
-      "HackerRank/1.0.0": {
-        "dependencies": {
-          "BinarySearchTree": "1.0.0"
-        },
-        "runtime": {
-          "HackerRank.dll": {}
-        }
-      },
       "BinarySearchTree/1.0.0": {
         "runtime": {
           "BinarySearchTree.dll": {}
@@ -22,11 +14,6 @@
     }
   },
   "libraries": {
-    "HackerRank/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
     "BinarySearchTree/1.0.0": {
       "type": "project",
       "serviceable": false,

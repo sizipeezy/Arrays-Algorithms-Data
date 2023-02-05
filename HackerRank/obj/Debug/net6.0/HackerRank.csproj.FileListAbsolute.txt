@@ -13,3 +13,6 @@ E:\C# Asp.Net Books\ASP.NET 6 Web Advanced\HackerRank\HackerRank\obj\Debug\net6.
 E:\C# Asp.Net Books\ASP.NET 6 Web Advanced\HackerRank\HackerRank\obj\Debug\net6.0\HackerRank.pdb
 E:\C# Asp.Net Books\ASP.NET 6 Web Advanced\HackerRank\HackerRank\obj\Debug\net6.0\HackerRank.genruntimeconfig.cache
 E:\C# Asp.Net Books\ASP.NET 6 Web Advanced\HackerRank\HackerRank\obj\Debug\net6.0\ref\HackerRank.dll
+E:\C# Asp.Net Books\ASP.NET 6 Web Advanced\HackerRank\HackerRank\bin\Debug\net6.0\BinarySearchTree.dll
+E:\C# Asp.Net Books\ASP.NET 6 Web Advanced\HackerRank\HackerRank\bin\Debug\net6.0\BinarySearchTree.pdb
+E:\C# Asp.Net Books\ASP.NET 6 Web Advanced\HackerRank\HackerRank\obj\Debug\net6.0\HackerRank.csproj.CopyComplete

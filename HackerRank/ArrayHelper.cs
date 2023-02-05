@@ -50,7 +50,7 @@
             for (int i = 0; i < arr.Length; i++)
             {
                 var ex = arr[i] % arr.Length;
-                arr[ex] = arr[ex] + arr.Length;
+                arr[ex] +=  arr.Length;
             }
 
             for (int i = 0; i < arr.Length; i++)

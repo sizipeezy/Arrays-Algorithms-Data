@@ -1,4 +1,5 @@
-﻿using HackerRank;
+﻿using BinarySearchTree;
+using HackerRank;
 using System;
 using System.Text;
 
@@ -6,11 +7,18 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        //var inut = "hello";
-        //FindAllSubstrings(inut);
-
-        var input = new int[] { 2, 3, 4, 5 };
-        ArrayHelper.RotateLeft(input);
+        BinaryTree nums = new BinaryTree();
+        nums.Insert(50);
+        nums.Insert(17);
+        nums.Insert(23);
+        nums.Insert(12);
+        nums.Insert(19);
+        nums.Insert(54);
+        nums.Insert(9);
+        nums.Insert(14);
+        nums.Insert(67);
+        nums.Insert(76);
+        nums.Insert(72);
     }
  
     public static void FindAllSubstrings(string input)
