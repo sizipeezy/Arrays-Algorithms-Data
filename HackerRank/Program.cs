@@ -7,7 +7,9 @@ internal class Program
 {
     private static void Main(string[] args)
     {
-        var nums = new int[] { 2, 5, -7, 1, 4, 4, 2 };
+        var nums = new int[] { 2, 3, 5, 7 ,8 ,9 };
+
+       Console.WriteLine(ArrayHelper.TargetValue(nums, 8) + "RESULT Binary Search");
 
         Console.WriteLine(string.Join(" ", ArrayHelper.RemoveDuplicates(nums)));
 
