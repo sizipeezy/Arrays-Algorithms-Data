@@ -4,51 +4,39 @@ namespace HackerRank
 {
     public static class Sort
     {
-        public static void QuickSort(int[] arr, int leftIndex, int rightIndex)
+        static void QuickSort(int[] nums, int left, int right)
         {
-            if(leftIndex < rightIndex)
+            if (left < right)
             {
-                int pivot = Partition(arr, leftIndex, rightIndex);
-
-                if(pivot > 1)
-                {
-                    QuickSort(arr, leftIndex, pivot - 1);
-                }
-                if(pivot + 1 < rightIndex)
-                {
-                    QuickSort(arr, pivot + 1, rightIndex);
-                }
+                int pivotIndex = Partition(nums, left, right);
+                QuickSort(nums, left, pivotIndex - 1);
+                QuickSort(nums, pivotIndex + 1, right);
             }
         }
-        public static int Partition(int[] arr, int leftIndex, int rightIndex)
+
+        static int Partition(int[] nums, int left, int right)
         {
-            int pivot = arr[leftIndex];
-            while (true)
+            int pivot = nums[right];
+            int i = left - 1;
+            for (int j = left; j <= right - 1; j++)
             {
-                while (arr[leftIndex] < pivot)
+                if (nums[j] <= pivot)
                 {
-                    leftIndex++;
-                }
-
-                while (arr[rightIndex] > pivot)
-                {
-                    rightIndex--;
-                }
-
-                if(leftIndex < rightIndex)
-                {
-                    if (arr[leftIndex] == arr[rightIndex]) return rightIndex;
-
-                    int temp = arr[leftIndex];
-                    arr[leftIndex] = arr[rightIndex];
-                    arr[rightIndex] = temp;
-                }
-                else
-                {
-                    return rightIndex;
+                    i++;
+                    Swap(nums, i, j);
                 }
             }
+            Swap(nums, i + 1, right);
+            return i + 1;
         }
+
+        static void Swap(int[] nums, int i, int j)
+        {
+            int temp = nums[i];
+            nums[i] = nums[j];
+            nums[j] = temp;
+        }
+       
         public static void InsertionSortt(int[] arr)
         {
             int n = arr.Length;
