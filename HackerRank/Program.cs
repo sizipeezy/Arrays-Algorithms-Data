@@ -18,8 +18,43 @@ internal class Program
         ArrayHelper.SubArrayExists(nums);
 
         Console.WriteLine(string.Join(" ", ArrayHelper.OrderDescending(nums)));
+
+        var DiCkey = new string[] { "hello", "there", "i m" };
+        Console.WriteLine("------------");
+        Console.WriteLine(string.Join(" ", ReverseArray(DiCkey)));
+
+        var input = new int[] { 1, 2, 1, 3, 4, 1, 2 };
+        Console.WriteLine(string.Join(" ", RemoveDuplicates(input)));
+    }
+
+    public static IEnumerable<int> RemoveDuplicates(int[] arr)
+    {
+        var result = new HashSet<int>();
+        foreach (var item in arr)
+        {
+            if(!result.Contains(item))
+            {
+                result.Add(item);
+            }
+        }
+
+        return result;
     }
  
+    public static string[] ReverseArray(string[] input)
+    {
+        var start = 0;
+        var end = input.Length - 1;
+        while (start < end)
+        {
+            var temp = input[start];
+            input[start] = input[end];
+            input[end] = temp;
+            start++;
+            end--;
+        }
+        return input;
+    }
     public static void FindAllSubstrings(string input)
     {
         for (int i = 0; i < input.Length; i++)
