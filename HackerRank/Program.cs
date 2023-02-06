@@ -11,6 +11,11 @@ internal class Program
         int[] array = { 10, 4, 5, 8, 6, 11, 26 };
         int[] arraycopy = { 10, 4, 5, 8, 6, 11, 26 };
         int[] arr = { 10, 20, 30, 40, 50 };
+        int[] testZero = { 0, 2, 3, 0, 5, 1 };
+
+        ArrayHelper.MoveZero(testZero);
+        Console.WriteLine(string.Join(" ", testZero));
+        Console.WriteLine("----------------Move Zero-----------");
 
         Console.WriteLine(string.Join(" ", FindLargestThree(array)));
 
@@ -32,6 +37,7 @@ internal class Program
         }
     }
 
+  
     public static IEnumerable<int> FindLargestThree(int[] arr)
     {
         int first = 0;
@@ -72,7 +78,7 @@ internal class Program
             return KthSmallest(arr, partition + 1, high, k);
         else
             return KthSmallest(arr, low, partition - 1, k);
-        
+
     }
     public static int Partitions(int[] arr, int low, int high)
     {
@@ -109,7 +115,7 @@ internal class Program
         Array.Sort(combined);
 
         int mid = (m + n) / 2;
-        if((n+m) % 2 == 0)
+        if ((n + m) % 2 == 0)
         {
             return combined[mid - 1] + combined[mid] / 2.0;
         }
@@ -117,7 +123,7 @@ internal class Program
         {
             return combined[mid];
         }
-        
+
     }
 
     public static IEnumerable<int> RemoveDuplicates(int[] arr)
@@ -125,7 +131,7 @@ internal class Program
         var result = new HashSet<int>();
         foreach (var item in arr)
         {
-            if(!result.Contains(item))
+            if (!result.Contains(item))
             {
                 result.Add(item);
             }
@@ -133,7 +139,7 @@ internal class Program
 
         return result;
     }
- 
+
     public static string[] ReverseArray(string[] input)
     {
         var start = 0;

@@ -5,6 +5,19 @@
 
     public static class ArrayHelper
     {
+        public static void MoveZero(int[] arr)
+        {
+            int count = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if (arr[i] != 0)
+                    arr[count++] = arr[i];
+            }
+
+            while (count < arr.Length)
+                arr[count++] = 0;
+        }
         public static int TargetValue(int[] arr, int target)
         {
             int left = 0;
