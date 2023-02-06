@@ -11,6 +11,9 @@ internal class Program
 
        Console.WriteLine(ArrayHelper.TargetValue(nums, 8) + "RESULT Binary Search");
 
+        Console.WriteLine("-----------------");
+        Console.WriteLine(HackerRank.BinarySearch.BinarySearchRecursive(nums, 8, 0, nums.Length -1));
+
         Console.WriteLine(string.Join(" ", ArrayHelper.RemoveDuplicates(nums)));
 
         ArrayHelper.LargestAndSmallest(nums);
@@ -25,7 +28,12 @@ internal class Program
 
         var input = new int[] { 1, 2, 1, 3, 4, 1, 2 };
         Console.WriteLine(string.Join(" ", RemoveDuplicates(input)));
+
+        byte[] byteArray = new byte[] { 72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100 };
+        string result = Encoding.UTF8.GetString(byteArray);
+        Console.WriteLine(result);
     }
+
 
     public static IEnumerable<int> RemoveDuplicates(int[] arr)
     {
