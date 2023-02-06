@@ -1,42 +1,101 @@
 ﻿using BinarySearchTree;
 using HackerRank;
 using System;
+using System.Collections.Generic;
 using System.Text;
 
 internal class Program
 {
     private static void Main(string[] args)
     {
-        var nums = new int[] { 2, 3, 5, 7 ,8 ,9 };
+        int[] array = { 10, 4, 5, 8, 6, 11, 26 };
+        int[] arraycopy = { 10, 4, 5, 8, 6, 11, 26 };
+        int[] arr = { 10, 20, 30, 40, 50 };
 
-       Console.WriteLine(ArrayHelper.TargetValue(nums, 8) + "RESULT Binary Search");
+        Console.WriteLine(string.Join(" ", FindLargestThree(array)));
 
-        Console.WriteLine("-----------------");
-        Console.WriteLine(HackerRank.BinarySearch.BinarySearchRecursive(nums, 8, 0, nums.Length -1));
+        Console.WriteLine("----------------------largest on me----------");
 
-        Console.WriteLine(string.Join(" ", ArrayHelper.RemoveDuplicates(nums)));
+        int kPosition = 3;
+        int length = array.Length;
 
-        ArrayHelper.LargestAndSmallest(nums);
+        if (kPosition > length)
+        {
+            Console.WriteLine("Index out of bound");
+        }
+        else
+        {
+            // find kth smallest value
+            Console.WriteLine("K-th smallest element in array : " +
+                                KthSmallest(arraycopy, 0, length - 1,
+                                                        kPosition - 1));
+        }
+    }
 
-        ArrayHelper.SubArrayExists(nums);
+    public static IEnumerable<int> FindLargestThree(int[] arr)
+    {
+        int first = 0;
+        int second = 0;
+        int third = 0;
 
-        Console.WriteLine(string.Join(" ", ArrayHelper.OrderDescending(nums)));
+        for (int i = 0; i < arr.Length; i++)
+        {
+            // greater than first
+            if (arr[i] > first)
+            {
+                third = second;
+                second = first;
+                first = arr[i];
+            }
+            else if (arr[i] > second && arr[i] != first)
+            {
+                third = second;
+                second = arr[i];
+            }
+            else if (arr[i] > third && arr[i] != second)
+                third = arr[i];
+        }
 
-        var DiCkey = new string[] { "hello", "there", "i m" };
-        Console.WriteLine("------------");
-        Console.WriteLine(string.Join(" ", ReverseArray(DiCkey)));
+        var result = new List<int>();
+        result.Add(first);
+        result.Add(second);
+        result.Add(third);
+        return result;
+    }
+    public static int KthSmallest(int[] arr, int low, int high, int k)
+    {
+        int partition = Partitions(arr, low, high);
 
-        var input = new int[] { 1, 2, 1, 3, 4, 1, 2 };
-        Console.WriteLine(string.Join(" ", RemoveDuplicates(input)));
+        if (partition == k)
+            return arr[partition];
+        else if (partition < k)
+            return KthSmallest(arr, partition + 1, high, k);
+        else
+            return KthSmallest(arr, low, partition - 1, k);
+        
+    }
+    public static int Partitions(int[] arr, int low, int high)
+    {
+        int pivot = arr[high];
+        int pitotLow = low;
+        int temp;
 
-        byte[] byteArray = new byte[] { 72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100 };
-        string result = Encoding.UTF8.GetString(byteArray);
-        Console.WriteLine(result);
+        for (int i = low; i <= high; i++)
+        {
+            if (arr[i] < pivot)
+            {
+                temp = arr[i];
+                arr[i] = arr[pitotLow];
+                arr[pitotLow] = temp;
+                pitotLow++;
+            }
+        }
 
-        Console.WriteLine("------------------Median---------------");
-        var nums1 = new int[] { 1, 2 };
-        var nums2 = new int[] { 3 };
-        Console.WriteLine(FindMedianSortedArrays(nums1, nums2));
+        temp = arr[high];
+        arr[high] = arr[pitotLow];
+        arr[pitotLow] = temp;
+
+        return pitotLow;
     }
 
     public static double FindMedianSortedArrays(int[] num1, int[] nums2)
