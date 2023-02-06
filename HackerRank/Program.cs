@@ -32,8 +32,34 @@ internal class Program
         byte[] byteArray = new byte[] { 72, 101, 108, 108, 111, 32, 87, 111, 114, 108, 100 };
         string result = Encoding.UTF8.GetString(byteArray);
         Console.WriteLine(result);
+
+        Console.WriteLine("------------------Median---------------");
+        var nums1 = new int[] { 1, 2 };
+        var nums2 = new int[] { 3 };
+        Console.WriteLine(FindMedianSortedArrays(nums1, nums2));
     }
 
+    public static double FindMedianSortedArrays(int[] num1, int[] nums2)
+    {
+        int m = num1.Length;
+        int n = nums2.Length;
+
+        var combined = new int[n + m];
+        Array.Copy(num1, 0, combined, 0, m);
+        Array.Copy(nums2, 0, combined, 0, n);
+        Array.Sort(combined);
+
+        int mid = (m + n) / 2;
+        if((n+m) % 2 == 0)
+        {
+            return combined[mid - 1] + combined[mid] / 2.0;
+        }
+        else
+        {
+            return combined[mid];
+        }
+        
+    }
 
     public static IEnumerable<int> RemoveDuplicates(int[] arr)
     {
