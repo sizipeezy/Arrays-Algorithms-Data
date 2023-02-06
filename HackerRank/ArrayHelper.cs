@@ -5,6 +5,19 @@
 
     public static class ArrayHelper
     {
+        public static IEnumerable<int> SortInWave(int[] arr, int n)
+        {
+            Array.Sort(arr);
+
+            for (int i = 0; i < arr.Length - 1; i+=2)
+            {
+                int temp = arr[i];
+                arr[i] = arr[i + 1];
+                arr[i + 1] = temp;
+            }
+
+            return arr;
+        }
         public static void MoveZero(int[] arr)
         {
             int count = 0;

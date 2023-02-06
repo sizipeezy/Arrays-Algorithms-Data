@@ -12,7 +12,12 @@ internal class Program
         int[] arraycopy = { 10, 4, 5, 8, 6, 11, 26 };
         int[] arr = { 10, 20, 30, 40, 50 };
         int[] testZero = { 0, 2, 3, 0, 5, 1 };
+        int[] waveArray = { 20, 10, 8, 6, 4, 2 };
 
+        Console.WriteLine(string.Join(" ", ArrayHelper.SortInWave(waveArray, waveArray.Length - 1)));
+
+
+        Console.WriteLine("----------------Wave SOrt-----------");
         ArrayHelper.MoveZero(testZero);
         Console.WriteLine(string.Join(" ", testZero));
         Console.WriteLine("----------------Move Zero-----------");
