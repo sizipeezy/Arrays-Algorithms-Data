@@ -5,6 +5,26 @@
 
     public static class ArrayHelper
     {
+        public static int MinOperations(int[] arr, int k)
+        {
+            Array.Sort(arr);
+            var max = arr[arr.Length - 1];
+            int res = 0;
+
+            for (int i = 0; i < arr.Length; i++)
+            {
+                if((max - arr[i]) % k != 0)
+                {
+                    return -1;
+                }
+                else
+                {
+                    res += (max - arr[i]) / k;
+                }
+            }
+
+            return res;
+        }
         public static IEnumerable<int> SortInWave(int[] arr, int n)
         {
             Array.Sort(arr);
