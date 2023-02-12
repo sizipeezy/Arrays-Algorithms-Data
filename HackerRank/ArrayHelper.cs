@@ -5,6 +5,30 @@
 
     public static class ArrayHelper
     {
+        public static void FindDuplicate(int[] arr)
+        {
+            var nums = new Dictionary<int, int>();
+
+            foreach (var item in arr)
+            {
+                if(!nums.ContainsKey(item))
+                {
+                    nums.Add(item, 1);
+                }
+                else
+                {
+                    nums[item]++;
+                }
+            }
+
+
+            foreach (var item in nums)
+            {
+                if(item.Value > 1)
+                    Console.WriteLine(item.Key);
+            }
+            Console.WriteLine(-1);         
+        }
         public static IEnumerable<int> Sort012(int[] arr)
         {
             int low = 0;
