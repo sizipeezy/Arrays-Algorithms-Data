@@ -15,6 +15,9 @@ internal class Program
         int[] waveArray = { 20, 10, 8, 6, 4, 2 };
         int[] maxOperationsArr = { 21, 33, 9, 45, 63 };
         int[] zeroOneTwoArr = { 0, 1, 2};
+        int[] peakElements = { 1, 3, 3, 12, 10, 0 };
+
+        Console.WriteLine(ArrayHelper.PeakElement(peakElements));
 
        ArrayHelper.FindDuplicate(zeroOneTwoArr);
 
