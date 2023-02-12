@@ -5,6 +5,40 @@
 
     public static class ArrayHelper
     {
+        public static IEnumerable<int> Sort012(int[] arr)
+        {
+            int low = 0;
+            int high = arr.Length - 1;
+            int mid = 0;
+            int temp = 0;
+
+            while (mid <= high)
+            {
+                switch (arr[mid])
+                {
+                    case 0:
+                        temp = arr[low];
+                        arr[low] = arr[mid];
+                        arr[mid] = temp;
+                        low++;
+                        mid++;
+                        break;
+                    case 1:
+                        mid++;
+                        break;
+                    case 2:
+                        temp = arr[mid];
+                        arr[mid] = arr[high];
+                        arr[high] = temp;
+                        high--;
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            return arr;
+        }
         public static int MinOperations(int[] arr, int k)
         {
             Array.Sort(arr);

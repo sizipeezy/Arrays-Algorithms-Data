@@ -14,6 +14,9 @@ internal class Program
         int[] testZero = { 0, 2, 3, 0, 5, 1 };
         int[] waveArray = { 20, 10, 8, 6, 4, 2 };
         int[] maxOperationsArr = { 21, 33, 9, 45, 63 };
+        int[] zeroOneTwoArr = { 0, 1, 2, 0, 1, 2 };
+
+        Console.WriteLine(string.Join(" ", ArrayHelper.Sort012(zeroOneTwoArr)));
 
         Console.WriteLine(ArrayHelper.MinOperations(maxOperationsArr, 6));
 
