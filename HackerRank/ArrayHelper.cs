@@ -1,10 +1,35 @@
 ﻿namespace HackerRank
 {
+    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
 
     public static class ArrayHelper
     {
+        public static void SumSwapNumber(int[] arr1, int[] arr2)
+        {
+            var sum1 = arr1.Sum(x => x);
+            var sum2 = arr2.Sum(c => c);
+
+            int value1 = 0, newSum1, newSum2; 
+            int value2 = 0;
+
+
+            for (int i = 0; i < arr1.Length; i++)
+            {
+                for (int j = 0; j < arr2.Length; j++)
+                {
+                    newSum1 = sum1 - arr1[i] + arr2[j];
+                    newSum2 = sum2 - arr2[j] + arr1[i];
+                    if (newSum1 == newSum2)
+                    {
+                        value1 = arr1[i];
+                        value2 = arr2[j];
+                    }
+                }
+            }
+            Console.Write(value1 + " " + value2);
+        }
         public static int PeakElement(int[] arr)
         {
             int n = arr.Length - 1;

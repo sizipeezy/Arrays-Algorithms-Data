@@ -1,7 +1,4 @@
-﻿using BinarySearchTree;
-using HackerRank;
-using System;
-using System.Collections.Generic;
+﻿using HackerRank;
 using System.Text;
 
 internal class Program
@@ -16,6 +13,11 @@ internal class Program
         int[] maxOperationsArr = { 21, 33, 9, 45, 63 };
         int[] zeroOneTwoArr = { 0, 1, 2};
         int[] peakElements = { 1, 3, 3, 12, 10, 0 };
+
+        int[] first = { 5, 3, 3, 7 };
+        int[] second = { 4, 1, 1, 6 };
+
+        ArrayHelper.SumSwapNumber(first, second);
 
         Console.WriteLine(ArrayHelper.PeakElement(peakElements));
 
@@ -53,7 +55,7 @@ internal class Program
         }
     }
 
-  
+    
     public static IEnumerable<int> FindLargestThree(int[] arr)
     {
         int first = 0;
