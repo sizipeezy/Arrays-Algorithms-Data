@@ -17,6 +17,11 @@ internal class Program
         int[] first = { 5, 3, 3, 7 };
         int[] second = { 4, 1, 1, 6 };
 
+        int[] greedy = { 3, -4, 4, -3, 5, -9 };
+
+        //expected == 6;
+        Console.WriteLine(ArrayHelper.GreedyAlgorithmForHighestSum(greedy));
+
         ArrayHelper.SumSwapNumber(first, second);
 
         Console.WriteLine(ArrayHelper.PeakElement(peakElements));

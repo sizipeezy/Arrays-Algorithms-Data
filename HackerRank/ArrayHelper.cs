@@ -6,6 +6,26 @@
 
     public static class ArrayHelper
     {
+        public static int GreedyAlgorithmForHighestSum(int[] arr)
+        {
+            int currentSum = 0;
+            int max = 0;
+
+            foreach (var item in arr)
+            {
+                if (currentSum + item < 0)
+                    currentSum = 0;
+                else
+                {
+                    currentSum += item;
+                    if (currentSum > max)
+                        max = currentSum;
+                }
+                  
+            }
+
+            return max;
+        }
         public static void SumSwapNumber(int[] arr1, int[] arr2)
         {
             var sum1 = arr1.Sum(x => x);
