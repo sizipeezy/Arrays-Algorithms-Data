@@ -1,4 +1,5 @@
 ﻿using HackerRank;
+using System.Collections;
 using System.Text;
 
 internal class Program
@@ -18,6 +19,19 @@ internal class Program
         int[] second = { 4, 1, 1, 6 };
 
         int[] greedy = { 3, -4, 4, -3, 5, -9 };
+
+        var str1 = new List<char>();
+        str1.Add('g');
+        str1.Add('r');
+        str1.Add('a');
+        str1.Add('m');
+        // create and initialize new ArrayList
+        var str2 = new List<char>();
+        str2.Add('a');
+        str2.Add('r');
+        str2.Add('m');
+        Console.WriteLine(ArrayHelper.AreAnagrams(str1, str2));
+   
 
         //expected == 6;
         Console.WriteLine(ArrayHelper.GreedyAlgorithmForHighestSum(greedy));

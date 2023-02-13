@@ -6,6 +6,25 @@
 
     public static class ArrayHelper
     {
+        public static bool AreAnagrams(List<char> string1, List<char> string2)
+        {
+            int n1 = string1.Count;
+            int n2 = string2.Count;
+
+            if (n1 != n2)
+                return false;
+
+            string1.Sort();
+            string2.Sort();
+
+            for (int i = 0; i < n1; i++)
+            {
+                if (string1[i] != string2[i])
+                    return false;
+            }
+
+            return true;
+        }
         public static int GreedyAlgorithmForHighestSum(int[] arr)
         {
             int currentSum = 0;
